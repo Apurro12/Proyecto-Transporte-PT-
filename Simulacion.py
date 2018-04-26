@@ -84,8 +84,8 @@ def updown(p1,p2,grafo):
     dbs=[[ds[i],i] for i in range(0,len(ds))]
     dbs.sort()    
     # index list bajada --- index list subida
-    ilb=[dbo[i][1] for i in range(0,3)]
-    ils=[dbs[i][1] for i in range(0,3)]
+    ilb=[dbo[i][1] for i in range(0,len(db))] #Hago que me tire todos los indices de subida y bajada para que no halla error de compilacion
+    ils=[dbs[i][1] for i in range(0,len(ds))] #Cuando tengo grafos de tamaño mas chico que 4 aristas
     #guardo la distancia de recorrida entre subida y bajada
     recorrido=[]
     lenght=0
