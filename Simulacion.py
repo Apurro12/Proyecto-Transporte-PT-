@@ -118,9 +118,9 @@ def uds(p1,p2,grafo):
         return camina[i][0]>6 or camina[i][1]>6 or camina[i][2] >= 0.75*LA.norm(p2-p1) 
     
     if LA.norm(p2-p1)<=6:
-        return (print("Voy caminando."))
+        return (print("Voy caminando"))
     else:
-        for i in range(len(camina)-1,-1,-1): #Empeza desde el ultimo y anda bajando de a 1 hasta cero
+        for i in range(len(camina)-1,-1,-1):
             #filtro 1
             if cond(i):
                 del camina[i]
@@ -129,11 +129,11 @@ def uds(p1,p2,grafo):
     if len(camina)==0:
         return print("Este micro no me sirve.")
     elif len(camina)==1:
-        return tuple([paradas[0],dbus[0]])
+        return tuple([paradas[0],dbus[0],dbus[0]+camina[0][2]])
     else:
-        ddbus=[dbus[i]+4*camina[i][2] for i in range(len(dbus))] # Porque por 4? 
+        ddbus=[dbus[i]+camina[i][2] for i in range(len(dbus))] #El factor que multiplica a camina es la velocidad   
         i=ddbus.index(min(ddbus))
-        return tuple([paradas[i],dbus[i]])
+        return tuple([paradas[i],dbus[i],ddbus[i]])
         
                 
                 
