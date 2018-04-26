@@ -1,4 +1,4 @@
 # Proyecto-Transporte-PT-
 Simulacion para el PT
 
-Esto es una prueba para editar desde el internes
+El Archivo Simulacion.py es el archivo que originalmente subio Fede, todas las funciones estan testeadas y funcionan bien
