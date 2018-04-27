@@ -136,9 +136,26 @@ def uds(p1,p2,grafo):
         return tuple([paradas[i],dbus[i],ddbus[i]])
         
                 
+#A esta funcion le tengo que armar un gragrafofo que es un vector de grafo como los parametros que estan definidos abajo
+#p1=np.array([0,60])
+#p2=np.array([11,61])
+#q = np.array([2,50])
+#grafo=np.array([[0,60],[10,60]])
+#grafo2=np.array([[0,60],[11,60]])
+#gragrafofo = np.array([grafo,grafo2])
+
+def selector(p1,p2,gragrafofo):
+    Distances = []
+    D=[]
+    for i in range(0,len(gragrafofo)):
+        D= uds(p1,p2,gragrafofo[i])[2]
+        Distances.append(D)
+    
+    a = Distances.index(min(Distances))
+    print(a)
+    return(gragrafofo[a],uds(p1,p2,gragrafofo[a])[2])                
                 
-                
-         
+
         
         
 def read(pi,pf,grafo):
