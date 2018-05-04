@@ -22,14 +22,7 @@ def dlist(grafo,punto):
     """Retorna una lista con la funcion d aplicada entre puntos sucesivos de un grafo y punto"""
     return [d(grafo[i],grafo[i+1],punto) for i in range(0,len(grafo)-1)]  
 
-def indexconv(lista):
-    out=[]
-    index=0
-    for i in lista:
-        if i==True:
-            out.append(index)
-        index+=1
-    return out
+
 
 def nodelenght(i,j,grafo):
     """Mide la longitud de las aristas comprendidas entre los nodos i y j"""
@@ -153,7 +146,7 @@ def selector(p1,p2,gragrafofo):
     
     a = Distances.index(min(Distances))
     print(a)
-    return(gragrafofo[a],uds(p1,p2,gragrafofo[a])[2])                
+    return(gragrafofo[a],uds(p1,p2,gragrafofo[a])[2])      w9o          
                 
 
         
@@ -184,3 +177,12 @@ def walkdistance(ps,pb,pi,pf):
     c1=int(abs(ps[0]-pi[0])+abs(ps[1]-pi[1]))
     c2=int(abs(pb[0]-pf[0])+abs(pb[1]- pf[1]))
     return [c1,c2,c1+c2]
+
+def indexconv(lista):
+    out=[]
+    index=0
+    for i in lista:
+        if i==True:
+            out.append(index)
+        index+=1
+    return out
