@@ -34,36 +34,8 @@ def nodelenght(i,j,grafo):
 
 
 
-        
-        
-def travelenght(pi,pf,grafo):
-    """Dada una parada inicial, una final  y un grafo, esta funcion calcula las posibles longitudes del recorrido entre esos puntos por el micro y devuelve una lista ordenada con esos valores. Si existe un unico valor posible retorna un numero."""
-    #aca pi es parada inicial (en la cual sube) y pf es parada final (en la cual baja). Es decir pi y pf son puntos en alguna/s arista/s del grafo. 
-    if np.all(pi==pf)==True:
-        return 0
-    else:
-        i1=indexconv([LA.norm(i-pi)==0 for i in dlist(grafo,pi)])
-        i2=indexconv([LA.norm(i-pf)==0 for i in dlist(grafo,pf)])
-        op=[]
-        lenght=0
-        for j in i2:
-            for i in i1:
-                if i<=j:
-                    lenght+=LA.norm(pi-grafo[i+1])+nodelenght(i+1,j+1,grafo)-LA.norm(grafo[j+1]-pf)
-                    if lenght>=0:
-                        i1.remove(i)
-                        op.append(lenght)
-            lenght=0
-        if len(op)==1:
-            return op[0]
-        else:
-            return op.sort()
-
-
-
-
 def updown(p1,p2,grafo):  
-    """Dado un punto inicial p1 y un punto final p2 y un grafo, esta funcion devuelve una tupla cuyo primer elemento es una lista con las 3 bajadas mas cercanas a p2 y para cada una de ellas las 3 subidas mas cercanas a p1. El segundo elemento de la tupla es la longitud del recorrido del micro para cada uno de los trayectos calculados en la lista."""
+    """Dado un punto inicial p1 y un punto final p2 y un grafo, esta funcion devuelve una tupla cuyo primer elemento es una lista con todas las distancias a las paradas de p2 y para cada una de ellas las distancias a p1. El segundo elemento de la tupla es la longitud del recorrido del micro para cada uno de los trayectos calculados en la lista."""
     # posibles bajadas y subidas
     bajadas=dlist(grafo,p2)
     subidas=dlist(grafo,p1)
@@ -108,7 +80,7 @@ def uds(p1,p2,grafo):
     camina=[walkdistance(i[0],i[1],p1,p2) for i in paradas]
     
     def cond(i):
-        return camina[i][0]>6 or camina[i][1]>6 or camina[i][2] >= 0.75*LA.norm(p2-p1) 
+        return camina[i][2] >= LA.norm(p2-p1,1) """camina[i][0]>6 or camina[i][1]>6 or camina[i][2] >= 0.75*LA.norm(p2-p1) """
     
     if LA.norm(p2-p1)<=6:
         return (print("Voy caminando"))
@@ -186,3 +158,29 @@ def indexconv(lista):
             out.append(index)
         index+=1
     return out
+
+def travelenght(pi,pf,grafo):
+    """Dada una parada inicial, una final  y un grafo, esta funcion calcula las posibles longitudes del recorrido entre esos puntos por el micro y devuelve una lista ordenada con esos valores. Si existe un unico valor posible retorna un numero."""
+    #aca pi es parada inicial (en la cual sube) y pf es parada final (en la cual baja). Es decir pi y pf son puntos en alguna/s arista/s del grafo. 
+    if np.all(pi==pf)==True:
+        return 0
+    else:
+        i1=indexconv([LA.norm(i-pi)==0 for i in dlist(grafo,pi)])
+        i2=indexconv([LA.norm(i-pf)==0 for i in dlist(grafo,pf)])
+        op=[]
+        lenght=0
+        for j in i2:
+            for i in i1:
+                if i<=j:
+                    lenght+=LA.norm(pi-grafo[i+1])+nodelenght(i+1,j+1,grafo)-LA.norm(grafo[j+1]-pf)
+                    if lenght>=0:
+                        i1.remove(i)
+                        op.append(lenght)
+            lenght=0
+        if len(op)==1:
+            return op[0]
+        else:
+            return op.sort()
+
+
+
