@@ -69,6 +69,37 @@ Ahora recorre todas las combinaciones de subidas/bajadas y tengo dos posibilidad
   #. Le append a recorrido la longitud del viaje en colectivo por haberse subido/bajado ahí
 
 Una vez que hace esto para todos los pares de posibles subidas y bajadas, me devuelve Una Tupla donde el 1er elemento es out y el segundo el recorrido.
-Ej = [[[[0,0],[10,10]],[20]],[[[4,5],[13,18]],[50]]] , Esto significa que se subio en [0,0], se bajo en [10,10] y recorrio 20 cuadras en bondi, sin importar la cantidad de aristas o dobladas que alla echo el colectivo, y la otra posibilidad es que se subio en [4,5], se bajo en [13,18] y recorrio 50 cuadras en bondi, el siguiente paso es distinguir cual de todas estas opciones es la mejor
+Ej = [[[0,0],[10,10]],[20]],[[[4,5],[13,18]],[50]] , Esto significa que se subio en [0,0], se bajo en [10,10] y recorrio 20 cuadras en bondi, sin importar la cantidad de aristas o dobladas que alla echo el colectivo, y la otra posibilidad es que se subio en [4,5], se bajo en [13,18] y recorrio 50 cuadras en bondi, el siguiente paso es distinguir cual de todas estas opciones es la mejor
 
-En caso de que no se cumpla ninguna de las condiciones anteriores (Como puede ser si tengo solo 2 aristas), devuelve un vector nulo, si el vector tiene por lo menos 3 aristas, ya me va a devoler algo
+En caso de que no se cumpla ninguna de las condiciones anteriores (Como puede ser si tengo solo 2 aristas), devuelve una tupla vacia [], si el vector tiene por lo menos 3 aristas, ya me va a devoler algo
+
+
+walkdistance(ps,pb,pi,pf):
+----------------------------
+tanto ps/pb/pi/pf son vectores arrays de numpy, ej ps = np.array([1,2])
+pi/pf son los puntos de donde la persona inicia/finaliza su recorrido
+ps/pb son los puntos en donde la persona se suba/baja al bondi
+
+Lo que va a hacer es agarrar y calcularse la norma del taxista para los vectores CC1 = ps-pi y  CC2 = pb - pf que las llama c1 y c2
+entonces me va a devolver una tupla con los tres valores [c1,c2,c1+c2]
+
+
+uds(p1,p2,grafo):
+-------------------
+Se crea una matriz paradas = updown(p1,p2,grafo)[0] , que es un vector que dados p1 y p2 te dice todas las posibles combinaciones de subidas y bajadas, tal que se baje despues de donde se suba (o en el mismo punto) 
+ej = [ [[S1x,S1y],[B1x,B1y]],[ [S2x,S2y],[B2x,B2y]] ] donde S/B son las coordenadas x/y el primer/segundo par de subidas/bajadas
+
+se crea dbus = paradas(p1,p2,grafo)[1] que es la distancia que recorrio en bondi, entre cuando se sube en el 1er par de subidas/bajadas de paradas y luego el segundo elemento es cuando se sube/baja en el 2do par que aparece en paradas, etc; ej [1,4,5,1,2,3]
+
+se crea el vector camina que me dice las distancias desde donde sale a donde se sube y de donde se baja a donde llega 
+
+
+
+
+
+
+
+
+
+
+
