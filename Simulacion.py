@@ -78,27 +78,28 @@ def uds(p1,p2,grafo):
     paradas=updown(p1,p2,grafo)[0]
     dbus=updown(p1,p2,grafo)[1]
     camina=[walkdistance(i[0],i[1],p1,p2) for i in paradas]
+    a = 1 #a es el timepo relativo caminando y en colectivo
+#    def cond(i):
+#        return camina[i][2] >= LA.norm(p2-p1,1) """camina[i][0]>6 or camina[i][1]>6 or camina[i][2] >= 0.75*LA.norm(p2-p1) """
     
-    def cond(i):
-        return camina[i][2] >= LA.norm(p2-p1,1) """camina[i][0]>6 or camina[i][1]>6 or camina[i][2] >= 0.75*LA.norm(p2-p1) """
-    
-    if LA.norm(p2-p1)<=6:
-        return (print("Voy caminando"))
+#    if LA.norm(p2-p1)<=6:
+#        return (print("Voy caminando"))
+#    else:
+#        for i in range(len(camina)-1,-1,-1):
+#            #filtro 1
+#            if cond(i):
+#                del camina[i]
+#                del paradas[i]
+#                del dbus[i]
+#    if len(camina)==0:
+#        return print("Este micro no me sirve.")
+#    elif len(camina)==1:
+#        return tuple([paradas[0],dbus[0],dbus[0]+camina[0][2]])
     else:
-        for i in range(len(camina)-1,-1,-1):
-            #filtro 1
-            if cond(i):
-                del camina[i]
-                del paradas[i]
-                del dbus[i]
-    if len(camina)==0:
-        return print("Este micro no me sirve.")
-    elif len(camina)==1:
-        return tuple([paradas[0],dbus[0],dbus[0]+camina[0][2]])
-    else:
-        ddbus=[dbus[i]+camina[i][2] for i in range(len(dbus))] #El factor que multiplica a camina es la velocidad   
+        ddbus=[dbus[i]+ a*camina[i][2] for i in range(len(dbus))] #El factor que multiplica a camina es la velocidad   
         i=ddbus.index(min(ddbus))
-        return tuple([paradas[i],dbus[i],ddbus[i]])
+        return tuple([paradas[i],dbus[i],ddbus[i],a * LA.norm(p2-p1,1)] )
+#el  elemento [2] es el tiempo que tarda en bondi y el [3]  caminando
         
                 
 #A esta funcion le tengo que armar un gragrafofo que es un vector de grafo como los parametros que estan definidos abajo
