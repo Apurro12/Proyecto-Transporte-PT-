@@ -61,7 +61,7 @@ def updown(p1,p2,grafo):
             n=ilb[i]
             ps=subidas[m]
             pb=bajadas[n]          
-            if n==m and LA.norm(grafo[n+1]-p2)<=LA.norm(grafo[m+1]-p1):
+            if n==m and LA.norm(grafo[n+1]-pb)<=LA.norm(grafo[m+1]-ps):
                 out.append([ps,pb])
                 lenght=LA.norm(pb-ps)
                 recorrido.append(lenght)
