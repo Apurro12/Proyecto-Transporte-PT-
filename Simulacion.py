@@ -1,10 +1,18 @@
+
+# coding: utf-8
+
+# In[1]:
+
+
 import numpy as np
 from numpy import linalg as LA
-import random
+from random import randint as RI
+
+
+a= 4
 
 def d(p1,p2,q):
-    """Dado un segmento que va de p1 a p2 y un punto q, esta funcion \n encuentra el punto sobre el segmento a menor distancia de q. Los argumentos \n son p1, p2, q que son np.arrays y devuelve un np.array."""
-    t=np.dot(p2-p1,(q-p1))/(LA.norm(p2-p1)**2)
+    t=np.dot((p2-p1),(q-p1))/(LA.norm(p2-p1)**2)
     if t<0:
         x=p1
     elif t>1:
@@ -13,55 +21,44 @@ def d(p1,p2,q):
         x=(p2-p1)*t+p1
     return x
 
-
-p1=np.array([2,60])
-p2=np.array([1,50])
-grafo=np.array([[7,60],[7,44],[1,44],[1,60]])
-
 def dlist(grafo,punto):
-    """Retorna una lista con la funcion d aplicada entre puntos sucesivos de un grafo y punto"""
     return [d(grafo[i],grafo[i+1],punto) for i in range(0,len(grafo)-1)]  
 
-
-
 def nodelenght(i,j,grafo):
-    """Mide la longitud de las aristas comprendidas entre los nodos i y j"""
     lenght=0
     if i<j:
         for i in range(i,j):
             lenght+=LA.norm(grafo[i+1]-grafo[i])
     return lenght
 
+def updown(p1,p2,grafo): #p1 y p2 es de donde sale y quiere llegr o puntos del grafo 
+    
+    bajadas=dlist(grafo,p2) #Puntos del grafo que estan mas cerca de p2
+    subidas=dlist(grafo,p1) #lo mismo pero con p1
 
+    out=[] #El return
+    
+    db=[LA.norm(i-p2) for i in bajadas] #Distancia de las bajadas entre dos aristas
+    dbo=[[db[i],i] for i in range(0,len(db))] #Distancia de las subidas entre dos aristas y su indice, 1er arista
+    dbo.sort() #CUAL ES EL CRITERIO PARA ORDENAR ? 
 
-def updown(p1,p2,grafo):  
-    """Dado un punto inicial p1 y un punto final p2 y un grafo, esta funcion devuelve una tupla cuyo primer elemento es una lista con todas las distancias a las paradas de p2 y para cada una de ellas las distancias a p1. El segundo elemento de la tupla es la longitud del recorrido del micro para cada uno de los trayectos calculados en la lista."""
-    # posibles bajadas y subidas
-    bajadas=dlist(grafo,p2)
-    subidas=dlist(grafo,p1)
-    #el return
-    out=[]
-    #distancias bajadas y subidas ordenadas por proximidad y con la informacion del indice.
-    db=[LA.norm(i-p2) for i in bajadas]
-    dbo=[[db[i],i] for i in range(0,len(db))]
-    dbo.sort()
     ds=[LA.norm(i-p1) for i in subidas]
-    dbs=[[ds[i],i] for i in range(0,len(ds))]
-    dbs.sort()    
-    # index list bajada --- index list subida
-    ilb=[dbo[i][1] for i in range(0,len(db))] #Hago que me tire todos los indices de subida y bajada para que no halla error de compilacion
-    ils=[dbs[i][1] for i in range(0,len(ds))] #Cuando tengo grafos de tamaño mas chico que 4 aristas
-    #guardo la distancia de recorrida entre subida y bajada
-    recorrido=[]
-    lenght=0
-    #construyo out
-    for i in range(0,len(ilb)):
-        for j in range(0,len(ils)):
-            m=ils[j]
+    dso=[[ds[i],i] for i in range(0,len(ds))] 
+    dso.sort()    
+
+    ilb=[dbo[i][1] for i in range(0,len(db))] # Me va a tirar los indices de los 3 primeros que estan mas cerca de la bjada
+    ils=[dso[i][1] for i in range(0,len(db))] # Lo mismo pero para la subida
+
+    recorrido=[] #Que es recorrido ?
+    lenght=0 #Que es lenght ?
+
+    for i in range(0,len(ilb)): #Recorro los indices que me quedo en ilb
+        for j in range(0,len(ils)): #Recorro los indices que me quedo en ils
+            m=ils[j] 
             n=ilb[i]
             ps=subidas[m]
-            pb=bajadas[n]          
-            if n==m and LA.norm(grafo[n+1]-pb)<=LA.norm(grafo[m+1]-ps):
+            pb=bajadas[n]            
+            if (n==m) and (LA.norm(grafo[n+1]-pb)) <= (LA.norm(grafo[m+1]-ps)): #Si se sube y baja en el mismo tramo
                 out.append([ps,pb])
                 lenght=LA.norm(pb-ps)
                 recorrido.append(lenght)
@@ -71,117 +68,133 @@ def updown(p1,p2,grafo):
                 recorrido.append(lenght)
             lenght=0
     return tuple([out,recorrido])
-    
-#uds=updownsmart
+
+def walkdistance(ps,pb,pi,pf):
+    """ walkdistance toma 4 vectores y les toma la norma del taxista, agarra vectores no coordenadas """
+    c1=int(abs(ps[0]-pi[0])+abs(ps[1]-pi[1]))
+    c2=int(abs(pb[0]-pf[0])+abs(pb[1]- pf[1]))
+    return [c1,c2,c1+c2]
+
 def uds(p1,p2,grafo):
     """Decide con algun criterio cual es la mejor opcion de updown, p1 y p2 no son necesariamente puntos del grafo """
     paradas=updown(p1,p2,grafo)[0]
     dbus=updown(p1,p2,grafo)[1]
     camina=[walkdistance(i[0],i[1],p1,p2) for i in paradas]
-    a = 1 #a es el timepo relativo caminando y en colectivo
-#    def cond(i):
-#        return camina[i][2] >= LA.norm(p2-p1,1) """camina[i][0]>6 or camina[i][1]>6 or camina[i][2] >= 0.75*LA.norm(p2-p1) """
-    
-#    if LA.norm(p2-p1)<=6:
-#        return (print("Voy caminando"))
-#    else:
-#        for i in range(len(camina)-1,-1,-1):
-#            #filtro 1
-#            if cond(i):
-#                del camina[i]
-#                del paradas[i]
-#                del dbus[i]
-#    if len(camina)==0:
-#        return print("Este micro no me sirve.")
-#    elif len(camina)==1:
-#        return tuple([paradas[0],dbus[0],dbus[0]+camina[0][2]])
-    else:
-        ddbus=[dbus[i]+ a*camina[i][2] for i in range(len(dbus))] #El factor que multiplica a camina es la velocidad   
+#    a = 5 # Esta es el tiempo relativo cuando vamina y anda en cole
+
+    if range(len(dbus) != 0):
+        ddbus=[dbus[i] + (a)*camina[i][2] for i in range(len(dbus))] # a es el tiempo x cuadra
         i=ddbus.index(min(ddbus))
-        return tuple([paradas[i],dbus[i],ddbus[i],a * LA.norm(p2-p1,1)] )
-#el  elemento [2] es el tiempo que tarda en bondi y el [3]  caminando
-        
-                
-#A esta funcion le tengo que armar un gragrafofo que es un vector de grafo como los parametros que estan definidos abajo
-#p1=np.array([0,60])
-#p2=np.array([11,61])
-#q = np.array([2,50])
-#grafo=np.array([[0,60],[10,60]])
-#grafo2=np.array([[0,60],[11,60]])
-#gragrafofo = np.array([grafo,grafo2])
+        return tuple([ddbus[i],a * LA.norm(p2-p1,1)] ) #el  elemento [0] es el tiempo que tarda en bondi y el [1]  caminando
+    else:
+        return tuple([a*LA.norm(p2-p1,1),a*LA.norm(p2-p1,1)]) #Si no hay paradas posibles que te minimizen
+                                                         # anda caminando
+
+def toptimo(p1,p2,grafo):
+    """Me dice cual es el tiempo optimo de viaje"""
+    return min(uds(p1,p2,grafo))
+#Esta cosa me devuelve el tiempo minimo que tarda entre dos puntos 
+
 
 def selector(p1,p2,gragrafofo):
-    Distances = []
+    Tiempos = []
     D=[]
     for i in range(0,len(gragrafofo)):
-        D= uds(p1,p2,gragrafofo[i])[2]
-        Distances.append(D)
+        D =  toptimo(p1,p2,gragrafofo[i])
+        Tiempos.append(D)
+
+    tmin = min(Tiempos)
+    b = Tiempos.index(tmin) #Este te devuelve el primer minimo que encuentra 
+    return(b,tmin) #Retorna el num de grafo que se toma y el tiempo que tarda cuando viaja optimo
+
+def tot2(grafo): # Este total calcula el tiempo total sobre todos los limites en las esquinas
+    total = 0
+    for x1 in range(-7,32):
+        for y1 in range(32,73):
+            for y2 in range(y1,73):
+                for x2 in range(y1,32):
+                    taux = toptimo(np.array([x1,y1]),np.array([x2,y2]),grafo)
+                    total = total + taux
+    return (total)
+
+def tot(grafo): # Este total tira numeros random para hacer lo mismo que el de arriba
+    total = 0
+    for j in range(0,100): #El limite se puede aumentar para tener mas precision
+        x1 = RI(-7,31)
+        x2 = RI(-7,31)
+        y1 = RI(32,72)
+        y2 = RI(32,72)
+        taux = toptimo(np.array([x1,y1]),np.array([x2,y2]),grafo)
+        total = total + taux
+    return (total)
+
+
+e0 = np.array([0,0])
+e1 = np.array([1,0])
+e2= np.array([1,1])
+e3 = np.array([0,1])
+e4 = np.array([-1,1])
+e5= np.array([-1,0])
+e6 = np.array([-1,-1])
+e7 = np.array([0,-1])
+e8= np.array([1,-1])
+versores = np.array([e0,e1,e2,e3,e4,e5,e6,e7,e8])
+
+def optimizador(grafo):
+    grafos = []
+    lista = []
+#    print("El grafo original es", grafo)
+    print()
+    for i in range(0,9):
+        for j in range(0,9):
+            grafos.append(np.array([grafo[0]+versores[j],grafo[1]+versores[i]]))
+            lista.append(tot( np.array([grafo[0]+versores[j],grafo[1]+versores[i]]) ) )
+#            print(G[i+j])    
+#    print(lista)
+    tn = min(lista)
+    indice = lista.index(tn)
+#    print(indice)
+    return(grafos[indice])
     
-    a = Distances.index(min(Distances))
-    print(a)
-    return(gragrafofo[a],uds(p1,p2,gragrafofo[a])[2])      w9o          
-                
-
-        
-        
-def read(pi,pf,grafo):
-    """Arroja en pantalla informacion de la simulacion."""
-    if type(uds(pi,pf,grafo))==tuple:
-        ps=uds(pi,pf,grafo)[0][0]
-        pb=uds(pi,pf,grafo)[0][1]
-        minlen=uds(pi,pf,grafo)[1]
-        uwalk=walkdistance(ps,pb,pi,pf)[0]
-        dwalk=walkdistance(ps,pb,pi,pf)[1]
-        return print("\n\nCamino " +str(uwalk) +" cuadras hacia la parada.\nSubio en " +str(int(ps[0])) +" y " +str(int(ps[1]))  +" y bajo en "+str(int(pb[0]))+" y "+str(int(pb[1]))  +".\nCamino al bajar " +str(dwalk)+ " cuadras hasta su destino. \nRecorrio "+str(minlen)+" cuadras en micro.\n\n")
-    else:
-        return uds(pi,pf,grafo)
-        
-#mas adelante hay que complejizar esta funcion para ponerle puntos de interes.
-def pgenerator():
-    x=list(range(-5,32))
-    y=list(range(32,73))
-    def rand(x):
-        return random.choice(x)
-    return [np.array([rand(x),rand(y)])for i in [1,2]]
-
-#mas adelante hay que complejizar la funcion para que tenga en cuenta las diagonales (hay que usar grafo)
-def walkdistance(ps,pb,pi,pf):
-	""" walkdistance toma 4 vectores y les toma la norma del taxista, agarra vectores no coordenadas """
-    c1=int(abs(ps[0]-pi[0])+abs(ps[1]-pi[1]))
-    c2=int(abs(pb[0]-pf[0])+abs(pb[1]- pf[1]))
-    return [c1,c2,c1+c2]
-
-def indexconv(lista):
-    out=[]
-    index=0
-    for i in lista:
-        if i==True:
-            out.append(index)
-        index+=1
-    return out
-
-def travelenght(pi,pf,grafo):
-    """Dada una parada inicial, una final  y un grafo, esta funcion calcula las posibles longitudes del recorrido entre esos puntos por el micro y devuelve una lista ordenada con esos valores. Si existe un unico valor posible retorna un numero."""
-    #aca pi es parada inicial (en la cual sube) y pf es parada final (en la cual baja). Es decir pi y pf son puntos en alguna/s arista/s del grafo. 
-    if np.all(pi==pf)==True:
-        return 0
-    else:
-        i1=indexconv([LA.norm(i-pi)==0 for i in dlist(grafo,pi)])
-        i2=indexconv([LA.norm(i-pf)==0 for i in dlist(grafo,pf)])
-        op=[]
-        lenght=0
-        for j in i2:
-            for i in i1:
-                if i<=j:
-                    lenght+=LA.norm(pi-grafo[i+1])+nodelenght(i+1,j+1,grafo)-LA.norm(grafo[j+1]-pf)
-                    if lenght>=0:
-                        i1.remove(i)
-                        op.append(lenght)
-            lenght=0
-        if len(op)==1:
-            return op[0]
-        else:
-            return op.sort()
+def optimizador2(gragrafofo):
+    listorta= []
+    tiempos = []
+    for j in range(0,len(gragrafofo)):
+        listorta.append (  optimizador ( gragrafofo[j] ) )
+        tiempos. append ( tot( optimizador ( gragrafofo[j] ) ) )
+    tn = min(tiempos)
+    indice = tiempos.index(tn)
+    
+    for j in range(0,len(gragrafofo)):
+        if (j == indice):
+            gragrafofo[j] = listorta[j]
+            
+    return(gragrafofo)
 
 
 
+# In[2]:
+
+
+p1=np.array([-1,44])
+p2=np.array([-1,45])
+q = np.array([2,50])
+grafo=np.array([[7,60],[7,44]])
+grafo1=np.array([[-1,44],[14,60]])
+grafo2=np.array([[-1,44],[15,61]])
+grafo4=np.array([[-1,44],[14,59]])
+gragrafofo = np.array([grafo2,grafo])
+# gragrafofo es un vector de grafos
+
+
+# In[4]:
+
+
+grafo = np.array([[-1,44],[14,59]])
+print(grafo)
+print()
+
+for j in range(0,10):
+    grafo = optimizador(grafo)
+    print(grafo)
+    print()
