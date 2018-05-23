@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[15]:
 
 
 import numpy as np
@@ -119,7 +119,7 @@ def tot2(grafo): # Este total calcula el tiempo total sobre todos los limites en
 
 def tot(grafo): # Este total tira numeros random para hacer lo mismo que el de arriba
     total = 0
-    for j in range(0,100): #El limite se puede aumentar para tener mas precision
+    for j in range(0,10): #El limite se puede aumentar para tener mas precision
         x1 = RI(-7,31)
         x2 = RI(-7,31)
         y1 = RI(32,72)
@@ -173,7 +173,7 @@ def optimizador2(gragrafofo):
 
 
 
-# In[2]:
+# In[16]:
 
 
 p1=np.array([-1,44])
@@ -187,14 +187,15 @@ gragrafofo = np.array([grafo2,grafo])
 # gragrafofo es un vector de grafos
 
 
-# In[4]:
+# In[41]:
 
 
 grafo = np.array([[-1,44],[14,59]])
-print(grafo)
-print()
+print("Empezo")
 
+Datos = open("Prueba1","w")
 for j in range(0,10):
     grafo = optimizador(grafo)
-    print(grafo)
-    print()
+    Datos.write( str("[") + str(grafo[0]) + "," + str( grafo[1] ) + str("]") + str("\n")  )
+
+print("termino")
