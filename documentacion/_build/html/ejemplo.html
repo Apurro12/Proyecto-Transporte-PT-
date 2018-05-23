@@ -1,0 +1,175 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="Español">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Funciones &#8212; Proyecto Transporte 0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to Proyecto Transporte&#39;s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="funciones">
+<h1>Funciones<a class="headerlink" href="#funciones" title="Permalink to this headline">¶</a></h1>
+<p>Acá vamos a explicar todas las funciones echas en el archivo, simulacion.py que esta en el Github</p>
+<div class="section" id="d-p1-p2-q">
+<h2>d(p1,p2,q)<a class="headerlink" href="#d-p1-p2-q" title="Permalink to this headline">¶</a></h2>
+<p>d(p1,p2,q) devuelve la coordenada del punto mas cercano del segmento p1-p2 al punto q,
+devuelve un punto sobre el segmento p1-p2</p>
+<p>Sus argumentos son :</p>
+<blockquote>
+<div><ul class="simple">
+<li>p1,p2 y q, arrays de numpy, ej q = np.array([3,4])</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="dlist-grafo-q">
+<h2>dlist(grafo,q)<a class="headerlink" href="#dlist-grafo-q" title="Permalink to this headline">¶</a></h2>
+<p>dlist devuelve un vector de los puntos mas cercanos
+entre todas las aristas consecutivas del grafo, al punto q</p>
+<p>Sus argumentos son :</p>
+<blockquote>
+<div><ul class="simple">
+<li>q, array de numpy, ej q = np.array([3,4])</li>
+<li>grafo, vector que contiene vectores de numpy, ej grafo = np.array([[0,0][1,1][3,4]])</li>
+</ul>
+</div></blockquote>
+<p>si aplicamos dlist(grafo,q) al ejemplo anterior nos va a tirar dos vectores,
+uno por cada vertice que tenga el grafo</p>
+</div>
+<div class="section" id="nodelenght-i-j-grafo">
+<h2>nodelenght(i,j,grafo)<a class="headerlink" href="#nodelenght-i-j-grafo" title="Permalink to this headline">¶</a></h2>
+<p>Dame dos vertices y un grafo, y te va a tirar la distancia que hay mientras vas del vertice i al j
+si pasa que i &gt;= j retorna identicamente el numero cero, (El primer vertice le corresponde i=0)</p>
+<p>El return es o un entero o un float</p>
+</div>
+<div class="section" id="updown-p1-p2-grafo">
+<h2>updown(p1,p2,grafo):<a class="headerlink" href="#updown-p1-p2-grafo" title="Permalink to this headline">¶</a></h2>
+<p>updown te va a agarrar un punto inicial p1, un final p2, y un grafo</p>
+<p>Se va a construir dos listas con todas las distancias mas cercanas entre todas las aristas a p1 y p2, estos son las listas subidas/bajadas</p>
+<p>Una vez que para cada arista tiene el punto mas cercano a p1/p2, se va a calcular la distancia de todos estos puntos a p1 y p2, estas son las listas db (Distancia bajada) y ds (distancia subida)</p>
+<p>me creo ahora vectores que en la primera componen tengan los elementos de db (distancia al punto de la arista) y en la segunda el indice del primer vertice de esa arista dbo/dbs, la segunda componente de estos vectores van a ir desde cero hasta la longitud del grafo</p>
+<p>Ahora estos vectores dbo/dbs me los voy a ordenar de forma tal que sean creciente en la distancia a la parada, osea que valla creciendo la primer componente de estos vectores, ejemplo:
+[[1,2][2,0][3,1]]
+recordar que la primer componente es la distancia a la parada mas cercana</p>
+<p>Ahora me voy a armar otros dos vectores que donde me de los indices(2da componente) de los vectores dbo y dbs, por ejemplo anterior me daria
+[2,0,1], estos vectores se llaman ils/ils (Index List subida/bajada)</p>
+<p>Todas subidas/bajadas/db/ds/dbo/dbs/ils/ilb tienen la misma longitud, que es la del numero de aristas del grafo</p>
+<p>Ahora hace un doble bucle de i desde 0 a len(ilb) y j desde 0 a len(ils)
+Ahora recorre todas las combinaciones de subidas/bajadas y tengo dos posibilidades</p>
+<blockquote>
+<div><ul class="simple">
+<li>Si subida y bajada esta en la misma arista se pregunta si la bajada esta mas cerca de la ultima arista que la subida (significa que se pregunta si subio y recorrio en la direccion del colectivo para bajarse, no alrevez), si esto se cumple</li>
+</ul>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Le append a out un vector de vectores que tiene los puntos de subida/bajada</li>
+<li>Le append a recorrido la longitud del viaje en colectivo por haberse subido/bajado ahí</li>
+</ol>
+</div></blockquote>
+<ul class="simple">
+<li>Luego se pregunta si la 1er arista donde esta la bajada es mas grande que la arista de subida, si es asi</li>
+</ul>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Calcula la distancia entre esos puntos, usando nodelenght</li>
+<li>Le append a out un vector de vectores que tiene los puntos de subida/bajada</li>
+<li>Le append a recorrido la longitud del viaje en colectivo por haberse subido/bajado ahí</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+<p>Una vez que hace esto para todos los pares de posibles subidas y bajadas, me devuelve Una Tupla donde el 1er elemento es out y el segundo el recorrido.
+Ej = [[[0,0],[10,10]],[20]],[[[4,5],[13,18]],[50]] , Esto significa que se subio en [0,0], se bajo en [10,10] y recorrio 20 cuadras en bondi, sin importar la cantidad de aristas o dobladas que alla echo el colectivo, y la otra posibilidad es que se subio en [4,5], se bajo en [13,18] y recorrio 50 cuadras en bondi, el siguiente paso es distinguir cual de todas estas opciones es la mejor</p>
+<p>En caso de que no se cumpla ninguna de las condiciones anteriores (Como puede ser si tengo solo 2 aristas), devuelve una tupla vacia [], si el vector tiene por lo menos 3 aristas, ya me va a devoler algo</p>
+</div>
+<div class="section" id="walkdistance-ps-pb-pi-pf">
+<h2>walkdistance(ps,pb,pi,pf):<a class="headerlink" href="#walkdistance-ps-pb-pi-pf" title="Permalink to this headline">¶</a></h2>
+<p>tanto ps/pb/pi/pf son vectores arrays de numpy, ej ps = np.array([1,2])
+pi/pf son los puntos de donde la persona inicia/finaliza su recorrido
+ps/pb son los puntos en donde la persona se suba/baja al bondi</p>
+<p>Lo que va a hacer es agarrar y calcularse la norma del taxista para los vectores CC1 = ps-pi y  CC2 = pb - pf que las llama c1 y c2
+entonces me va a devolver una tupla con los tres valores [c1,c2,c1+c2]</p>
+</div>
+<div class="section" id="uds-p1-p2-grafo">
+<h2>uds(p1,p2,grafo):<a class="headerlink" href="#uds-p1-p2-grafo" title="Permalink to this headline">¶</a></h2>
+<p>Se crea una matriz paradas = updown(p1,p2,grafo)[0] , que es un vector que dados p1 y p2 te dice todas las posibles combinaciones de subidas y bajadas, tal que se baje despues de donde se suba (o en el mismo punto)
+ej = [ [[S1x,S1y],[B1x,B1y]],[ [S2x,S2y],[B2x,B2y]] ] donde S/B son las coordenadas x/y el primer/segundo par de subidas/bajadas</p>
+<p>se crea dbus = paradas(p1,p2,grafo)[1] que es la distancia que recorrio en bondi, entre cuando se sube en el 1er par de subidas/bajadas de paradas y luego el segundo elemento es cuando se sube/baja en el 2do par que aparece en paradas, etc</p>
+<p>se crea el vector camina que me dice las distancias desde donde sale a donde se sube y de donde se baja a donde llega</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Proyecto Transporte's documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Los 3.14 Bes.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/ejemplo.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
