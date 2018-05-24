@@ -7,9 +7,10 @@
 import numpy as np
 from numpy import linalg as LA
 from random import randint as RI
-
+import time
 
 a= 4
+bach = 10
 
 def d(p1,p2,q):
     t=np.dot((p2-p1),(q-p1))/(LA.norm(p2-p1)**2)
@@ -192,10 +193,12 @@ gragrafofo = np.array([grafo2,grafo])
 
 grafo = np.array([[-1,44],[14,59]])
 print("Empezo")
-
+print()
 Datos = open("Prueba1","w")
-for j in range(0,10):
+for j in range(0,1000):
     grafo = optimizador(grafo)
     Datos.write( str("[") + str(grafo[0]) + "," + str( grafo[1] ) + str("]") + str("\n")  )
+    print(time.clock())
+    print("pasada" ,j,"De", bach)
 
 print("termino")
