@@ -11,6 +11,7 @@ import time
 
 a= 4
 bach = 10
+iteracion = 20
 
 def d(p1,p2,q):
     t=np.dot((p2-p1),(q-p1))/(LA.norm(p2-p1)**2)
@@ -190,15 +191,24 @@ gragrafofo = np.array([grafo2,grafo])
 
 # In[41]:
 
+"""ESto Abajo Esta Escrito para poner Animarlo con el Mathematica"""
 
 grafo = np.array([[-1,44],[14,59]])
 print("Empezo")
 print()
 Datos = open("Prueba1","w")
-for j in range(0,1000):
+Datos.write( str("{") )
+for j in range(0,iteracion):
     grafo = optimizador(grafo)
-    Datos.write( str("[") + str(grafo[0]) + "," + str( grafo[1] ) + str("]") + str("\n")  )
+    Datos.write( str("{") )
+    Datos.write( str("{") + str(grafo[0][0]) + "," + str(grafo[0][1]) + str("}") + "," +  str("{") + str(grafo[1][0]) + "," + str(grafo[1][1])  + str("}") + str("}") )
+    if (j != iteracion - 1):
+        Datos.write( str(",") )
+
     print(time.clock())
-    print("pasada" ,j,"De", bach)
+    print("pasada" ,j+1,"De", iteracion )
+
+Datos.write( str("}") )
 
 print("termino")
+
