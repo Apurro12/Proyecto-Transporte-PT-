@@ -197,18 +197,16 @@ grafo = np.array([[-1,44],[14,59]])
 print("Empezo")
 print()
 Datos = open("Prueba1","w")
-Datos.write( str("{") )
+
 for j in range(0,iteracion):
     grafo = optimizador(grafo)
-    Datos.write( str("{") )
-    Datos.write( str("{") + str(grafo[0][0]) + "," + str(grafo[0][1]) + str("}") + "," +  str("{") + str(grafo[1][0]) + "," + str(grafo[1][1])  + str("}") + str("}") )
+    Datos.write( str(grafo[0][0]) + "," + str(grafo[0][1])  + ","  + str(grafo[1][0]) + "," + str(grafo[1][1])   )
     if (j != iteracion - 1):
-        Datos.write( str(",") )
+        Datos.write( str("\n") )
 
     print(time.clock())
     print("pasada" ,j+1,"De", iteracion )
 
-Datos.write( str("}") )
 
 print("termino")
 

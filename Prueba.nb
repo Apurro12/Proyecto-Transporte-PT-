@@ -1,0 +1,450 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17431,        442]
+NotebookOptionsPosition[     16410,        418]
+NotebookOutlinePosition[     16748,        433]
+CellTagsIndexPosition[     16705,        430]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Graphics", "[", 
+   RowBox[{
+    RowBox[{"Arrow", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"7", ",", "44"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"7", ",", "60"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "60"}], "}"}]}], "}"}], "]"}], ",", 
+    RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Graphics", "[", 
+   RowBox[{
+    RowBox[{"Arrow", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "44"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "60"}], "}"}]}], "}"}], "]"}], ",", 
+    RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LP", " ", "=", " ", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "7"}], ",", "32"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"31", ",", "32"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "7"}], ",", "32"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "7"}], ",", "72"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "7"}], ",", "72"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"31", ",", "72"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"31", ",", "72"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"31", ",", "32"}], "}"}]}], "}"}]}], "}"}], "]"}], ",", 
+     RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", 
+  RowBox[{"%", ",", "%%", ",", "LP"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7362810580351763`*^9, 3.736281059161088*^9}, {
+  3.736281228071835*^9, 3.73628122966679*^9}, {3.736340479219263*^9, 
+  3.736340488266675*^9}, {3.736340641180582*^9, 3.736340684968279*^9}, {
+  3.736340954437087*^9, 3.7363409695840187`*^9}, {3.7363410131732073`*^9, 
+  3.7363410870278463`*^9}, {3.736341510309183*^9, 
+  3.7363415157722473`*^9}},ExpressionUUID->"2b114400-9e03-4d29-93ac-\
+5c263c362bee"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 72}, {31, 
+    72}}, {{31, 72}, {31, 32}}}], ArrowBox[{{1, 44}, {1, 60}}], 
+   LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 72}, {31, 
+    72}}, {{31, 72}, {31, 32}}}]},
+  Frame->True]], "Output",
+ CellChangeTimes->{{3.736340693275313*^9, 3.7363407158922043`*^9}, {
+   3.7363410218452663`*^9, 3.736341087167179*^9}, 3.7363411520718937`*^9, 
+   3.7363415166553698`*^9},ExpressionUUID->"9527d370-5449-4097-a90f-\
+208c5f15500a"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Evolucion1", " ", "=", " ", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\</home/apu/Desktop/Prueba/Prueba1.dat\>\"", ",", "\"\<CSV\>\""}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7362811774986267`*^9, 3.7362811775063057`*^9}, {
+  3.736340041128014*^9, 3.736340081000413*^9}, {3.736341138072394*^9, 
+  3.736341141766945*^9}},ExpressionUUID->"637495ed-83d9-4947-b2a3-\
+872b51358d80"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"iteracion", " ", "=", " ", "20"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Numero", " ", "de", " ", "iteraciones", " ", "que", " ", "hago", " ", 
+    "con", " ", "el", " ", "codigo", " ", "python"}], "*)"}], ";"}]], "Input",\
+
+ CellChangeTimes->{{3.736341191773031*^9, 3.736341195206752*^9}, {
+  3.736341731665576*^9, 
+  3.7363417608412447`*^9}},ExpressionUUID->"20829ec0-cf2a-49b7-a334-\
+27a41bb1d9b4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Show", "[", 
+     RowBox[{
+      RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Arrow", "[", 
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Evolucion1", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"Evolucion1", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Evolucion1", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "3", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"Evolucion1", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "4", "]"}], "]"}]}], "}"}]}], "}"}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}], ",", "LP"}], "]"}], 
+    "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", "iteracion"}], "}"}]}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.736341200565391*^9, 3.736341350065031*^9}, {
+   3.736341559170392*^9, 3.736341562001319*^9}, 3.736341603771323*^9, {
+   3.7363417014826117`*^9, 3.736341720772375*^9}, {3.736341768042104*^9, 
+   3.736341784554995*^9}},ExpressionUUID->"84932f6f-96bf-416a-92eb-\
+fb8309a37f53"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListAnimate", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.736341635764876*^9, 
+  3.736341639197322*^9}},ExpressionUUID->"d3bda179-5628-4491-843d-\
+14969f1d32fc"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`i13$$ = 20, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {
+    "\"min\"" :> {$CellContext`i13$$ = 1}, 
+     "\"max\"" :> {$CellContext`i13$$ = 20}}, Typeset`bookmarkMode$$ = "Menu",
+     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`i13$$], 1, ""}, 1, 20, 1}}, Typeset`size$$ = 
+    Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`i13$9267$$ = 0}, 
+    PaneBox[
+     PanelBox[
+      DynamicWrapperBox[GridBox[{
+         {
+          ItemBox[
+           ItemBox[
+            TagBox[
+             StyleBox[GridBox[{
+                {"\<\"\"\>", 
+                 AnimatorBox[Dynamic[$CellContext`i13$$], {1, 20, 1},
+                  AnimationRate->Automatic,
+                  AnimationRunTime->9.882608413696289,
+                  AnimationRunning->False,
+                  AnimationTimeIndex->4.882608413696289,
+                  
+                  AppearanceElements->{
+                   "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons",
+                     "DirectionButton"},
+                  AutoAction->False,
+                  DisplayAllSteps->True]}
+               },
+               AutoDelete->False,
+               
+               GridBoxAlignment->{
+                "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+                 "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+              "ListAnimateLabel",
+              StripOnInput->False],
+             {"ControlArea", Top}],
+            Alignment->{Automatic, Inherited},
+            StripOnInput->False],
+           Background->None,
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            StyleBox[
+             PaneBox[
+              TagBox[
+               PaneSelectorBox[{1->
+                GraphicsBox[{ArrowBox[{{0, 45}, {13, 60}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 2->
+                
+                GraphicsBox[{ArrowBox[{{1, 45}, {14, 59}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 3->
+                
+                GraphicsBox[{ArrowBox[{{2, 46}, {14, 60}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 4->
+                
+                GraphicsBox[{ArrowBox[{{3, 45}, {14, 59}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 5->
+                
+                GraphicsBox[{ArrowBox[{{4, 46}, {14, 60}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 6->
+                
+                GraphicsBox[{ArrowBox[{{5, 46}, {13, 61}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 7->
+                
+                GraphicsBox[{ArrowBox[{{6, 46}, {13, 61}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 8->
+                
+                GraphicsBox[{ArrowBox[{{6, 45}, {14, 62}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 9->
+                
+                GraphicsBox[{ArrowBox[{{5, 45}, {15, 63}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 10->
+                
+                GraphicsBox[{ArrowBox[{{4, 46}, {15, 63}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 11->
+                
+                GraphicsBox[{ArrowBox[{{3, 45}, {14, 62}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 12->
+                
+                GraphicsBox[{ArrowBox[{{3, 44}, {15, 61}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 13->
+                
+                GraphicsBox[{ArrowBox[{{3, 44}, {14, 62}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 14->
+                
+                GraphicsBox[{ArrowBox[{{3, 43}, {14, 61}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 15->
+                
+                GraphicsBox[{ArrowBox[{{4, 43}, {15, 60}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 16->
+                
+                GraphicsBox[{ArrowBox[{{5, 44}, {14, 59}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 17->
+                
+                GraphicsBox[{ArrowBox[{{6, 43}, {13, 60}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 18->
+                
+                GraphicsBox[{ArrowBox[{{5, 43}, {12, 60}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 19->
+                
+                GraphicsBox[{ArrowBox[{{4, 44}, {13, 61}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 20->
+                GraphicsBox[{ArrowBox[{{5, 43}, {12, 62}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True]}, Dynamic[$CellContext`i13$$],
+                Alignment->Automatic,
+                BaseStyle->"ListAnimateCore",
+                ImageSize->All,
+                TransitionDirection->Horizontal,
+                TransitionDuration->0.5,
+                TransitionEffect->Automatic],
+               Identity,
+               Editable->True,
+               Selectable->True],
+              ImageMargins->10],
+             Deployed->False,
+             StripOnInput->False,
+             ScriptLevel->0,
+             GraphicsBoxOptions->{PreserveImageOptions->True},
+             Graphics3DBoxOptions->{PreserveImageOptions->True}],
+            Identity,
+            Editable->False,
+            Selectable->False],
+           Alignment->{Left, Center},
+           Background->GrayLevel[1],
+           Frame->1,
+           FrameStyle->GrayLevel[0, 0.2],
+           ItemSize->Automatic,
+           StripOnInput->False]}
+        },
+        AutoDelete->False,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Top}}, 
+          "RowsIndexed" -> {}},
+        GridBoxDividers->{
+         "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+          "RowsIndexed" -> {}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.7], {
+             Offset[0.5599999999999999]}, 
+            Offset[0.7]}, "ColumnsIndexed" -> {}, "Rows" -> {
+            Offset[0.4], {
+             Offset[0.8]}, 
+            Offset[0.4]}, "RowsIndexed" -> {}}], If[
+        And[
+         CurrentValue["NotebookSelected"], 
+         CurrentValue["SelectionOver"]], 
+        Manipulate`Dump`ReadControllerState[
+         Map[Manipulate`Dump`updateOneVar[#, 
+           CurrentValue["PreviousFormatTime"], 
+           CurrentValue["CurrentFormatTime"]]& , {
+           
+           Manipulate`Dump`controllerLink[{$CellContext`i13$$, \
+$CellContext`i13$9267$$}, "X1", 
+            If["DefaultAbsolute", True, "JB1"], False, {1, 20, 1}, 20, 1.]}], 
+         
+         CurrentValue[{
+          "ControllerData", {
+           "Gamepad", "Joystick", "Multi-Axis Controller"}}], {}]],
+       ImageSizeCache->{393., {215.75, 220.75}}],
+      DefaultBaseStyle->{},
+      FrameMargins->{{5, 5}, {5, 5}}],
+     BaselinePosition->Automatic,
+     ImageMargins->0],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "ListAnimate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.736341639551281*^9, 3.736341706078341*^9, 
+  3.736341787620863*^9},ExpressionUUID->"0dc14cf6-889a-4f46-84b3-\
+cb2dc6216973"]
+}, Open  ]],
+
+Cell[BoxData["Quit"], "Input",
+ CellChangeTimes->{{3.736341146274434*^9, 
+  3.7363411465490294`*^9}},ExpressionUUID->"509038da-adee-4048-b758-\
+abadb0385326"]
+},
+WindowSize->{1340, 690},
+WindowMargins->{{1, Automatic}, {1, Automatic}},
+FrontEndVersion->"11.2 for Linux x86 (64-bit) (September 10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2436, 72, 101, "Input",ExpressionUUID->"2b114400-9e03-4d29-93ac-5c263c362bee"],
+Cell[3019, 96, 530, 10, 397, "Output",ExpressionUUID->"9527d370-5449-4097-a90f-208c5f15500a"]
+}, Open  ]],
+Cell[3564, 109, 433, 10, 31, "Input",ExpressionUUID->"637495ed-83d9-4947-b2a3-872b51358d80"],
+Cell[4000, 121, 437, 11, 31, "Input",ExpressionUUID->"20829ec0-cf2a-49b7-a334-27a41bb1d9b4"],
+Cell[4440, 134, 1667, 42, 170, "Input",ExpressionUUID->"84932f6f-96bf-416a-92eb-fb8309a37f53"],
+Cell[CellGroupData[{
+Cell[6132, 180, 190, 4, 31, "Input",ExpressionUUID->"d3bda179-5628-4491-843d-14969f1d32fc"],
+Cell[6325, 186, 9908, 224, 503, "Output",ExpressionUUID->"0dc14cf6-889a-4f46-84b3-cb2dc6216973"]
+}, Open  ]],
+Cell[16248, 413, 158, 3, 31, "Input",ExpressionUUID->"509038da-adee-4048-b758-abadb0385326"]
+}
+]
+*)
+
