@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     17431,        442]
-NotebookOptionsPosition[     16410,        418]
-NotebookOutlinePosition[     16748,        433]
-CellTagsIndexPosition[     16705,        430]
+NotebookDataLength[     61989,       1456]
+NotebookOptionsPosition[     59620,       1413]
+NotebookOutlinePosition[     59958,       1428]
+CellTagsIndexPosition[     59915,       1425]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -103,8 +103,10 @@ Cell[BoxData[
   Frame->True]], "Output",
  CellChangeTimes->{{3.736340693275313*^9, 3.7363407158922043`*^9}, {
    3.7363410218452663`*^9, 3.736341087167179*^9}, 3.7363411520718937`*^9, 
-   3.7363415166553698`*^9},ExpressionUUID->"9527d370-5449-4097-a90f-\
-208c5f15500a"]
+   3.7363415166553698`*^9, 3.736342535840909*^9, 3.7363576435316353`*^9, 
+   3.736494920074608*^9, 
+   3.736495013283052*^9},ExpressionUUID->"6db09ea8-5d8f-4931-acd9-\
+2b7a4710ac27"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -112,25 +114,306 @@ Cell[BoxData[
   RowBox[{"Evolucion1", " ", "=", " ", 
    RowBox[{"Import", "[", 
     RowBox[{
-    "\"\</home/apu/Desktop/Prueba/Prueba1.dat\>\"", ",", "\"\<CSV\>\""}], 
-    "]"}]}], ";"}]], "Input",
+    "\"\</home/apu/Desktop/Proyecto Transporte/Simu/Github/Prueba1\>\"", ",", 
+     "\"\<CSV\>\""}], "]"}]}], ";"}]], "Input",
  CellChangeTimes->{{3.7362811774986267`*^9, 3.7362811775063057`*^9}, {
   3.736340041128014*^9, 3.736340081000413*^9}, {3.736341138072394*^9, 
-  3.736341141766945*^9}},ExpressionUUID->"637495ed-83d9-4947-b2a3-\
+  3.736341141766945*^9}, {3.736342570773931*^9, 
+  3.736342615314803*^9}},ExpressionUUID->"637495ed-83d9-4947-b2a3-\
 872b51358d80"],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"iteracion", " ", "=", " ", "20"}], " ", 
+  RowBox[{"iteracion", " ", "=", " ", "12"}], " ", 
   RowBox[{"(*", 
    RowBox[{
    "Numero", " ", "de", " ", "iteraciones", " ", "que", " ", "hago", " ", 
     "con", " ", "el", " ", "codigo", " ", "python"}], "*)"}], ";"}]], "Input",\
 
  CellChangeTimes->{{3.736341191773031*^9, 3.736341195206752*^9}, {
-  3.736341731665576*^9, 
-  3.7363417608412447`*^9}},ExpressionUUID->"20829ec0-cf2a-49b7-a334-\
+  3.736341731665576*^9, 3.7363417608412447`*^9}, {3.736342628167636*^9, 
+  3.7363426285989656`*^9}, {3.7363576604419403`*^9, 3.7363576867034883`*^9}, {
+  3.736494931248247*^9, 
+  3.7364949317902822`*^9}},ExpressionUUID->"20829ec0-cf2a-49b7-a334-\
 27a41bb1d9b4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Show", "[", 
+     RowBox[{
+      RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Arrow", "[", 
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Evolucion1", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"Evolucion1", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Evolucion1", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "3", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"Evolucion1", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "4", "]"}], "]"}]}], "}"}]}], "}"}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}], ",", "LP"}], "]"}], 
+    "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "2", ",", "iteracion"}], "}"}]}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.736341200565391*^9, 3.736341350065031*^9}, {
+   3.736341559170392*^9, 3.736341562001319*^9}, 3.736341603771323*^9, {
+   3.7363417014826117`*^9, 3.736341720772375*^9}, {3.736341768042104*^9, 
+   3.736341784554995*^9}, {3.7364950442249804`*^9, 
+   3.736495050433251*^9}},ExpressionUUID->"84932f6f-96bf-416a-92eb-\
+fb8309a37f53"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListAnimate", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.736341635764876*^9, 
+  3.736341639197322*^9}},ExpressionUUID->"d3bda179-5628-4491-843d-\
+14969f1d32fc"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`i12$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {
+    "\"min\"" :> {$CellContext`i12$$ = 1}, 
+     "\"max\"" :> {$CellContext`i12$$ = 11}}, Typeset`bookmarkMode$$ = "Menu",
+     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`i12$$], 1, ""}, 1, 11, 1}}, Typeset`size$$ = 
+    Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`i12$4356$$ = 0}, 
+    PaneBox[
+     PanelBox[
+      DynamicWrapperBox[GridBox[{
+         {
+          ItemBox[
+           ItemBox[
+            TagBox[
+             StyleBox[GridBox[{
+                {"\<\"\"\>", 
+                 AnimatorBox[Dynamic[$CellContext`i12$$], {1, 11, 1},
+                  AnimationRate->Automatic,
+                  AnimationRunTime->5.069124698638916,
+                  AnimationRunning->False,
+                  AnimationTimeIndex->0.06912469863891602,
+                  
+                  AppearanceElements->{
+                   "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons",
+                     "DirectionButton"},
+                  AutoAction->False,
+                  DisplayAllSteps->True]}
+               },
+               AutoDelete->False,
+               
+               GridBoxAlignment->{
+                "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+                 "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+              "ListAnimateLabel",
+              StripOnInput->False],
+             {"ControlArea", Top}],
+            Alignment->{Automatic, Inherited},
+            StripOnInput->False],
+           Background->None,
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            StyleBox[
+             PaneBox[
+              TagBox[
+               PaneSelectorBox[{1->
+                GraphicsBox[{ArrowBox[{{7, 44}, {19, 60}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 2->
+                
+                GraphicsBox[{ArrowBox[{{8, 43}, {18, 61}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 3->
+                
+                GraphicsBox[{ArrowBox[{{9, 42}, {18, 62}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 4->
+                
+                GraphicsBox[{ArrowBox[{{9, 41}, {18, 63}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 5->
+                
+                GraphicsBox[{ArrowBox[{{10, 40}, {17, 64}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 6->
+                
+                GraphicsBox[{ArrowBox[{{11, 40}, {16, 65}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 7->
+                
+                GraphicsBox[{ArrowBox[{{12, 39}, {15, 66}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 8->
+                
+                GraphicsBox[{ArrowBox[{{13, 38}, {14, 67}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 9->
+                
+                GraphicsBox[{ArrowBox[{{13, 37}, {14, 68}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 10->
+                
+                GraphicsBox[{ArrowBox[{{12, 36}, {13, 69}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 11->
+                
+                GraphicsBox[{ArrowBox[{{11, 35}, {12, 70}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True]}, Dynamic[$CellContext`i12$$],
+                Alignment->Automatic,
+                BaseStyle->"ListAnimateCore",
+                ImageSize->All,
+                TransitionDirection->Horizontal,
+                TransitionDuration->0.5,
+                TransitionEffect->Automatic],
+               Identity,
+               Editable->True,
+               Selectable->True],
+              ImageMargins->10],
+             Deployed->False,
+             StripOnInput->False,
+             ScriptLevel->0,
+             GraphicsBoxOptions->{PreserveImageOptions->True},
+             Graphics3DBoxOptions->{PreserveImageOptions->True}],
+            Identity,
+            Editable->False,
+            Selectable->False],
+           Alignment->{Left, Center},
+           Background->GrayLevel[1],
+           Frame->1,
+           FrameStyle->GrayLevel[0, 0.2],
+           ItemSize->Automatic,
+           StripOnInput->False]}
+        },
+        AutoDelete->False,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Top}}, 
+          "RowsIndexed" -> {}},
+        GridBoxDividers->{
+         "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+          "RowsIndexed" -> {}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.7], {
+             Offset[0.5599999999999999]}, 
+            Offset[0.7]}, "ColumnsIndexed" -> {}, "Rows" -> {
+            Offset[0.4], {
+             Offset[0.8]}, 
+            Offset[0.4]}, "RowsIndexed" -> {}}], If[
+        And[
+         CurrentValue["NotebookSelected"], 
+         CurrentValue["SelectionOver"]], 
+        Manipulate`Dump`ReadControllerState[
+         Map[Manipulate`Dump`updateOneVar[#, 
+           CurrentValue["PreviousFormatTime"], 
+           CurrentValue["CurrentFormatTime"]]& , {
+           
+           Manipulate`Dump`controllerLink[{$CellContext`i12$$, \
+$CellContext`i12$4356$$}, "X1", 
+            If["DefaultAbsolute", True, "JB1"], False, {1, 11, 1}, 11, 1.]}], 
+         
+         CurrentValue[{
+          "ControllerData", {
+           "Gamepad", "Joystick", "Multi-Axis Controller"}}], {}]],
+       ImageSizeCache->{393., {215.75, 220.75}}],
+      DefaultBaseStyle->{},
+      FrameMargins->{{5, 5}, {5, 5}}],
+     BaselinePosition->Automatic,
+     ImageMargins->0],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "ListAnimate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.736341639551281*^9, 3.736341706078341*^9, 3.736341787620863*^9, 
+   3.736342640983864*^9, 3.736357666703499*^9, {3.736495036602256*^9, 
+   3.73649505498764*^9}},ExpressionUUID->"39804c75-d397-4790-9c39-\
+84934ad5cee6"]
+}, Open  ]],
+
+Cell[" ", "Text",
+ Editable->False,
+ Selectable->False,
+ CellFrame->{{0, 0}, {0, 2}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {1, 1}},
+ CellElementSpacings->{"CellMinHeight"->1},
+ CellFrameMargins->0,
+ CellFrameColor->RGBColor[0, 0, 1],
+ CellSize->{
+  Inherited, 4},ExpressionUUID->"cddf4688-b311-4a1d-bea3-eda74c597e01"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Evolucion1", " ", "=", " ", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\</home/apu/Desktop/Proyecto Transporte/Simu/Github/Prueba2\>\"", ",", 
+     "\"\<CSV\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7362811774986267`*^9, 3.7362811775063057`*^9}, {
+  3.736340041128014*^9, 3.736340081000413*^9}, {3.736341138072394*^9, 
+  3.736341141766945*^9}, {3.736342570773931*^9, 3.736342615314803*^9}, {
+  3.736343263468463*^9, 
+  3.7363432635632963`*^9}},ExpressionUUID->"9ec37b7a-c632-4d39-98b5-\
+a76a27311567"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"iteracion", " ", "=", " ", "10"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Numero", " ", "de", " ", "iteraciones", " ", "que", " ", "hago", " ", 
+    "con", " ", "el", " ", "codigo", " ", "python"}], "*)"}], ";"}]], "Input",\
+
+ CellChangeTimes->{{3.736341191773031*^9, 3.736341195206752*^9}, {
+  3.736341731665576*^9, 3.7363417608412447`*^9}, {3.736342628167636*^9, 
+  3.7363426285989656`*^9}, {3.7363432854667997`*^9, 
+  3.736343285607727*^9}},ExpressionUUID->"83b85aa9-4e29-442e-8942-\
+b937b7dd449b"],
 
 Cell[BoxData[
  RowBox[{
@@ -173,29 +456,29 @@ Cell[BoxData[
  CellChangeTimes->{{3.736341200565391*^9, 3.736341350065031*^9}, {
    3.736341559170392*^9, 3.736341562001319*^9}, 3.736341603771323*^9, {
    3.7363417014826117`*^9, 3.736341720772375*^9}, {3.736341768042104*^9, 
-   3.736341784554995*^9}},ExpressionUUID->"84932f6f-96bf-416a-92eb-\
-fb8309a37f53"],
+   3.736341784554995*^9}},ExpressionUUID->"b87004fa-ecdc-4329-affc-\
+865052d3251b"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"ListAnimate", "[", "%", "]"}]], "Input",
  CellChangeTimes->{{3.736341635764876*^9, 
-  3.736341639197322*^9}},ExpressionUUID->"d3bda179-5628-4491-843d-\
-14969f1d32fc"],
+  3.736341639197322*^9}},ExpressionUUID->"56b6295e-4c38-4dce-bbf2-\
+7e81269fd7a1"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`i13$$ = 20, Typeset`show$$ = True, 
+   DynamicModuleBox[{$CellContext`i13$$ = 2, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {
     "\"min\"" :> {$CellContext`i13$$ = 1}, 
-     "\"max\"" :> {$CellContext`i13$$ = 20}}, Typeset`bookmarkMode$$ = "Menu",
+     "\"max\"" :> {$CellContext`i13$$ = 10}}, Typeset`bookmarkMode$$ = "Menu",
      Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{{
-       Hold[$CellContext`i13$$], 1, ""}, 1, 20, 1}}, Typeset`size$$ = 
+       Hold[$CellContext`i13$$], 1, ""}, 1, 10, 1}}, Typeset`size$$ = 
     Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
-    Typeset`skipInitDone$$ = True, $CellContext`i13$9267$$ = 0}, 
+    Typeset`skipInitDone$$ = True, $CellContext`i13$5151$$ = 0}, 
     PaneBox[
      PanelBox[
       DynamicWrapperBox[GridBox[{
@@ -205,11 +488,11 @@ Cell[BoxData[
             TagBox[
              StyleBox[GridBox[{
                 {"\<\"\"\>", 
-                 AnimatorBox[Dynamic[$CellContext`i13$$], {1, 20, 1},
+                 AnimatorBox[Dynamic[$CellContext`i13$$], {1, 10, 1},
                   AnimationRate->Automatic,
-                  AnimationRunTime->9.882608413696289,
+                  AnimationRunTime->3.98997163772583,
                   AnimationRunning->False,
-                  AnimationTimeIndex->4.882608413696289,
+                  AnimationTimeIndex->0.6566383043924962,
                   
                   AppearanceElements->{
                    "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons",
@@ -239,101 +522,55 @@ Cell[BoxData[
              PaneBox[
               TagBox[
                PaneSelectorBox[{1->
-                GraphicsBox[{ArrowBox[{{0, 45}, {13, 60}}], 
+                
+                GraphicsBox[{
+                  ArrowBox[{{"Aca la configuracion inicial es [[11", "35]"}, {
+                    "[12", "70]]"}}], 
                   LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
                    72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
                  Frame->True], 2->
                 
-                GraphicsBox[{ArrowBox[{{1, 45}, {14, 59}}], 
+                GraphicsBox[{ArrowBox[{{11, 35}, {12, 70}}], 
                   LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
                    72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
                  Frame->True], 3->
                 
-                GraphicsBox[{ArrowBox[{{2, 46}, {14, 60}}], 
+                GraphicsBox[{ArrowBox[{{12, 34}, {11, 71}}], 
                   LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
                    72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
                  Frame->True], 4->
                 
-                GraphicsBox[{ArrowBox[{{3, 45}, {14, 59}}], 
+                GraphicsBox[{ArrowBox[{{12, 33}, {11, 72}}], 
                   LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
                    72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
                  Frame->True], 5->
                 
-                GraphicsBox[{ArrowBox[{{4, 46}, {14, 60}}], 
+                GraphicsBox[{ArrowBox[{{11, 32}, {12, 73}}], 
                   LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
                    72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
                  Frame->True], 6->
                 
-                GraphicsBox[{ArrowBox[{{5, 46}, {13, 61}}], 
+                GraphicsBox[{ArrowBox[{{12, 31}, {13, 72}}], 
                   LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
                    72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
                  Frame->True], 7->
                 
-                GraphicsBox[{ArrowBox[{{6, 46}, {13, 61}}], 
+                GraphicsBox[{ArrowBox[{{11, 31}, {12, 72}}], 
                   LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
                    72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
                  Frame->True], 8->
                 
-                GraphicsBox[{ArrowBox[{{6, 45}, {14, 62}}], 
+                GraphicsBox[{ArrowBox[{{12, 30}, {13, 73}}], 
                   LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
                    72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
                  Frame->True], 9->
                 
-                GraphicsBox[{ArrowBox[{{5, 45}, {15, 63}}], 
+                GraphicsBox[{ArrowBox[{{13, 29}, {14, 73}}], 
                   LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
                    72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
                  Frame->True], 10->
                 
-                GraphicsBox[{ArrowBox[{{4, 46}, {15, 63}}], 
-                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
-                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
-                 Frame->True], 11->
-                
-                GraphicsBox[{ArrowBox[{{3, 45}, {14, 62}}], 
-                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
-                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
-                 Frame->True], 12->
-                
-                GraphicsBox[{ArrowBox[{{3, 44}, {15, 61}}], 
-                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
-                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
-                 Frame->True], 13->
-                
-                GraphicsBox[{ArrowBox[{{3, 44}, {14, 62}}], 
-                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
-                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
-                 Frame->True], 14->
-                
-                GraphicsBox[{ArrowBox[{{3, 43}, {14, 61}}], 
-                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
-                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
-                 Frame->True], 15->
-                
-                GraphicsBox[{ArrowBox[{{4, 43}, {15, 60}}], 
-                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
-                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
-                 Frame->True], 16->
-                
-                GraphicsBox[{ArrowBox[{{5, 44}, {14, 59}}], 
-                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
-                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
-                 Frame->True], 17->
-                
-                GraphicsBox[{ArrowBox[{{6, 43}, {13, 60}}], 
-                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
-                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
-                 Frame->True], 18->
-                
-                GraphicsBox[{ArrowBox[{{5, 43}, {12, 60}}], 
-                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
-                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
-                 Frame->True], 19->
-                
-                GraphicsBox[{ArrowBox[{{4, 44}, {13, 61}}], 
-                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
-                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
-                 Frame->True], 20->
-                GraphicsBox[{ArrowBox[{{5, 43}, {12, 62}}], 
+                GraphicsBox[{ArrowBox[{{13, 29}, {14, 72}}], 
                   LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
                    72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
                  Frame->True]}, Dynamic[$CellContext`i13$$],
@@ -386,8 +623,427 @@ Cell[BoxData[
            CurrentValue["CurrentFormatTime"]]& , {
            
            Manipulate`Dump`controllerLink[{$CellContext`i13$$, \
-$CellContext`i13$9267$$}, "X1", 
-            If["DefaultAbsolute", True, "JB1"], False, {1, 20, 1}, 20, 1.]}], 
+$CellContext`i13$5151$$}, "X1", 
+            If["DefaultAbsolute", True, "JB1"], False, {1, 10, 1}, 10, 1.]}], 
+         
+         CurrentValue[{
+          "ControllerData", {
+           "Gamepad", "Joystick", "Multi-Axis Controller"}}], {}]],
+       ImageSizeCache->{393., {233.25, 238.25}}],
+      DefaultBaseStyle->{},
+      FrameMargins->{{5, 5}, {5, 5}}],
+     BaselinePosition->Automatic,
+     ImageMargins->0],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "ListAnimate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.736343287719017*^9, 
+  3.736495075622714*^9},ExpressionUUID->"e666feb3-e508-47aa-89c9-\
+9e2b80dd0a11"]
+}, Open  ]],
+
+Cell[" ", "Text",
+ Editable->False,
+ Selectable->False,
+ CellFrame->{{0, 0}, {0, 2}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {1, 1}},
+ CellElementSpacings->{"CellMinHeight"->1},
+ CellFrameMargins->0,
+ CellFrameColor->RGBColor[0, 0, 1],
+ CellSize->{
+  Inherited, 4},ExpressionUUID->"36539e2d-1ca9-4baa-ae15-38c58c65b3f8"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Evolucion1", " ", "=", " ", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\</home/apu/Desktop/Proyecto Transporte/Simu/Github/Prueba3\>\"", ",", 
+     "\"\<CSV\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7362811774986267`*^9, 3.7362811775063057`*^9}, {
+  3.736340041128014*^9, 3.736340081000413*^9}, {3.736341138072394*^9, 
+  3.736341141766945*^9}, {3.736342570773931*^9, 3.736342615314803*^9}, {
+  3.736343263468463*^9, 3.7363432635632963`*^9}, {3.736346255126459*^9, 
+  3.736346255230856*^9}},ExpressionUUID->"e1aa8486-ac20-43b3-a5c6-\
+5cb51b9582c2"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"iteracion", " ", "=", " ", "40"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Numero", " ", "de", " ", "iteraciones", " ", "que", " ", "hago", " ", 
+    "con", " ", "el", " ", "codigo", " ", "python"}], "*)"}], ";"}]], "Input",\
+
+ CellChangeTimes->{{3.736341191773031*^9, 3.736341195206752*^9}, {
+  3.736341731665576*^9, 3.7363417608412447`*^9}, {3.736342628167636*^9, 
+  3.7363426285989656`*^9}, {3.7363432854667997`*^9, 3.736343285607727*^9}, {
+  3.736357696266588*^9, 
+  3.736357696395947*^9}},ExpressionUUID->"8a3fe6a5-e8d1-4a50-9998-\
+cc6d9d7ca6c9"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Show", "[", 
+     RowBox[{
+      RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Arrow", "[", 
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Evolucion1", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"Evolucion1", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Evolucion1", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "3", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"Evolucion1", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "4", "]"}], "]"}]}], "}"}]}], "}"}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}], ",", "LP"}], "]"}], 
+    "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", "iteracion"}], "}"}]}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.736341200565391*^9, 3.736341350065031*^9}, {
+   3.736341559170392*^9, 3.736341562001319*^9}, 3.736341603771323*^9, {
+   3.7363417014826117`*^9, 3.736341720772375*^9}, {3.736341768042104*^9, 
+   3.736341784554995*^9}},ExpressionUUID->"b5feac9e-ad54-446a-8586-\
+f7d1748e5c21"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListAnimate", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.736341635764876*^9, 
+  3.736341639197322*^9}},ExpressionUUID->"bf0c2d50-f35f-46c6-b8b5-\
+c75f1fe84b52"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`i12$$ = 9, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {
+    "\"min\"" :> {$CellContext`i12$$ = 1}, 
+     "\"max\"" :> {$CellContext`i12$$ = 40}}, Typeset`bookmarkMode$$ = "Menu",
+     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`i12$$], 1, ""}, 1, 40, 1}}, Typeset`size$$ = 
+    Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`i12$4849$$ = 0}, 
+    PaneBox[
+     PanelBox[
+      DynamicWrapperBox[GridBox[{
+         {
+          ItemBox[
+           ItemBox[
+            TagBox[
+             StyleBox[GridBox[{
+                {"\<\"\"\>", 
+                 AnimatorBox[Dynamic[$CellContext`i12$$], {1, 40, 1},
+                  AnimationRate->Automatic,
+                  AnimationRunTime->1.3605098724365234`,
+                  AnimationRunning->False,
+                  AnimationTimeIndex->1.1040996160263603`,
+                  
+                  AppearanceElements->{
+                   "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons",
+                     "DirectionButton"},
+                  AutoAction->False,
+                  DisplayAllSteps->True]}
+               },
+               AutoDelete->False,
+               
+               GridBoxAlignment->{
+                "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+                 "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+              "ListAnimateLabel",
+              StripOnInput->False],
+             {"ControlArea", Top}],
+            Alignment->{Automatic, Inherited},
+            StripOnInput->False],
+           Background->None,
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            StyleBox[
+             PaneBox[
+              TagBox[
+               PaneSelectorBox[{1->
+                GraphicsBox[{ArrowBox[{{0, 44}, {14, 60}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 2->
+                
+                GraphicsBox[{ArrowBox[{{-1, 43}, {15, 59}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 3->
+                
+                GraphicsBox[{ArrowBox[{{-2, 44}, {16, 58}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 4->
+                
+                GraphicsBox[{ArrowBox[{{-3, 43}, {17, 59}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 5->
+                
+                GraphicsBox[{ArrowBox[{{-2, 42}, {18, 59}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 6->
+                
+                GraphicsBox[{ArrowBox[{{-3, 41}, {19, 60}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 7->
+                
+                GraphicsBox[{ArrowBox[{{-2, 42}, {20, 59}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 8->
+                
+                GraphicsBox[{ArrowBox[{{-3, 41}, {21, 58}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 9->
+                
+                GraphicsBox[{ArrowBox[{{-3, 42}, {21, 59}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 10->
+                
+                GraphicsBox[{ArrowBox[{{-3, 41}, {22, 59}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 11->
+                
+                GraphicsBox[{ArrowBox[{{-4, 41}, {22, 59}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 12->
+                
+                GraphicsBox[{ArrowBox[{{-4, 40}, {21, 58}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 13->
+                
+                GraphicsBox[{ArrowBox[{{-4, 41}, {22, 59}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 14->
+                
+                GraphicsBox[{ArrowBox[{{-5, 42}, {23, 58}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 15->
+                
+                GraphicsBox[{ArrowBox[{{-4, 43}, {22, 59}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 16->
+                
+                GraphicsBox[{ArrowBox[{{-3, 44}, {23, 58}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 17->
+                
+                GraphicsBox[{ArrowBox[{{-4, 43}, {24, 57}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 18->
+                
+                GraphicsBox[{ArrowBox[{{-5, 42}, {23, 57}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 19->
+                
+                GraphicsBox[{ArrowBox[{{-6, 41}, {24, 56}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 20->
+                GraphicsBox[{ArrowBox[{{-7, 42}, {23, 55}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 21->
+                
+                GraphicsBox[{ArrowBox[{{-8, 43}, {24, 54}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 22->
+                
+                GraphicsBox[{ArrowBox[{{-9, 44}, {25, 53}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 23->
+                
+                GraphicsBox[{ArrowBox[{{-8, 45}, {26, 52}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 24->
+                
+                GraphicsBox[{ArrowBox[{{-7, 45}, {26, 51}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 25->
+                
+                GraphicsBox[{ArrowBox[{{-8, 45}, {26, 50}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 26->
+                
+                GraphicsBox[{ArrowBox[{{-9, 46}, {26, 50}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 27->
+                
+                GraphicsBox[{ArrowBox[{{-9, 47}, {27, 50}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 28->
+                
+                GraphicsBox[{ArrowBox[{{-8, 48}, {27, 49}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 29->
+                
+                GraphicsBox[{ArrowBox[{{-8, 49}, {28, 48}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 30->
+                
+                GraphicsBox[{ArrowBox[{{-7, 48}, {28, 47}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 31->
+                
+                GraphicsBox[{ArrowBox[{{-7, 48}, {28, 48}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 32->
+                
+                GraphicsBox[{ArrowBox[{{-7, 48}, {28, 49}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 33->
+                
+                GraphicsBox[{ArrowBox[{{-6, 49}, {29, 50}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 34->
+                
+                GraphicsBox[{ArrowBox[{{-6, 48}, {30, 49}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 35->
+                
+                GraphicsBox[{ArrowBox[{{-5, 49}, {31, 50}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 36->
+                
+                GraphicsBox[{ArrowBox[{{-4, 49}, {30, 50}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 37->
+                
+                GraphicsBox[{ArrowBox[{{-4, 49}, {31, 50}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 38->
+                
+                GraphicsBox[{ArrowBox[{{-4, 49}, {32, 50}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 39->
+                GraphicsBox[{ArrowBox[{{-5, 50}, {32, 49}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True], 40->
+                
+                GraphicsBox[{ArrowBox[{{-5, 49}, {32, 50}}], 
+                  LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
+                   72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                 Frame->True]}, Dynamic[$CellContext`i12$$],
+                Alignment->Automatic,
+                BaseStyle->"ListAnimateCore",
+                ImageSize->All,
+                TransitionDirection->Horizontal,
+                TransitionDuration->0.5,
+                TransitionEffect->Automatic],
+               Identity,
+               Editable->True,
+               Selectable->True],
+              ImageMargins->10],
+             Deployed->False,
+             StripOnInput->False,
+             ScriptLevel->0,
+             GraphicsBoxOptions->{PreserveImageOptions->True},
+             Graphics3DBoxOptions->{PreserveImageOptions->True}],
+            Identity,
+            Editable->False,
+            Selectable->False],
+           Alignment->{Left, Center},
+           Background->GrayLevel[1],
+           Frame->1,
+           FrameStyle->GrayLevel[0, 0.2],
+           ItemSize->Automatic,
+           StripOnInput->False]}
+        },
+        AutoDelete->False,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Top}}, 
+          "RowsIndexed" -> {}},
+        GridBoxDividers->{
+         "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+          "RowsIndexed" -> {}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.7], {
+             Offset[0.5599999999999999]}, 
+            Offset[0.7]}, "ColumnsIndexed" -> {}, "Rows" -> {
+            Offset[0.4], {
+             Offset[0.8]}, 
+            Offset[0.4]}, "RowsIndexed" -> {}}], If[
+        And[
+         CurrentValue["NotebookSelected"], 
+         CurrentValue["SelectionOver"]], 
+        Manipulate`Dump`ReadControllerState[
+         Map[Manipulate`Dump`updateOneVar[#, 
+           CurrentValue["PreviousFormatTime"], 
+           CurrentValue["CurrentFormatTime"]]& , {
+           
+           Manipulate`Dump`controllerLink[{$CellContext`i12$$, \
+$CellContext`i12$4849$$}, "X1", 
+            If["DefaultAbsolute", True, "JB1"], False, {1, 40, 1}, 40, 1.]}], 
          
          CurrentValue[{
           "ControllerData", {
@@ -406,15 +1062,354 @@ $CellContext`i13$9267$$}, "X1",
    Deployed->True,
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{3.736341639551281*^9, 3.736341706078341*^9, 
-  3.736341787620863*^9},ExpressionUUID->"0dc14cf6-889a-4f46-84b3-\
-cb2dc6216973"]
+ CellChangeTimes->{3.736346262657382*^9, 
+  3.7363577063389387`*^9},ExpressionUUID->"5a19eff0-b50b-49e7-8a56-\
+01cc44b12985"]
 }, Open  ]],
 
-Cell[BoxData["Quit"], "Input",
- CellChangeTimes->{{3.736341146274434*^9, 
-  3.7363411465490294`*^9}},ExpressionUUID->"509038da-adee-4048-b758-\
-abadb0385326"]
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Expor", "[", 
+  RowBox[{"\"\<Animacion.jpg2\>\"", ",", "%12"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7363588641814413`*^9, 
+  3.736358877990096*^9}},ExpressionUUID->"a7efda95-2465-4381-be90-\
+24e2342773f2"],
+
+Cell[BoxData[
+ RowBox[{"Expor", "[", 
+  RowBox[{"\<\"Animacion.jpg2\"\>", ",", 
+   TagBox[
+    StyleBox[
+     DynamicModuleBox[{$CellContext`i12$$ = 1, Typeset`show$$ = True, 
+      Typeset`bookmarkList$$ = {
+      "\"min\"" :> {$CellContext`i12$$ = 1}, 
+       "\"max\"" :> {$CellContext`i12$$ = 40}}, Typeset`bookmarkMode$$ = 
+      "Menu", Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+      "\"untitled\"", Typeset`specs$$ = {{{
+         Hold[$CellContext`i12$$], 1, ""}, 1, 40, 1}}, Typeset`size$$ = 
+      Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
+      Typeset`skipInitDone$$ = True, $CellContext`i12$6922$$ = 0}, 
+      PaneBox[
+       PanelBox[
+        DynamicWrapperBox[GridBox[{
+           {
+            ItemBox[
+             ItemBox[
+              TagBox[
+               StyleBox[GridBox[{
+                  {"\<\"\"\>", 
+                   AnimatorBox[Dynamic[$CellContext`i12$$], {1, 40, 1},
+                    AnimationRate->Automatic,
+                    AnimationRunTime->0.,
+                    AnimationRunning->False,
+                    AnimationTimeIndex->0.,
+                    
+                    AppearanceElements->{
+                    "ProgressSlider", "PlayPauseButton", 
+                    "FasterSlowerButtons", "DirectionButton"},
+                    AutoAction->False,
+                    DisplayAllSteps->True]}
+                 },
+                 AutoDelete->False,
+                 
+                 GridBoxAlignment->{
+                  "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+                   "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+                 
+                 GridBoxItemSize->{
+                  "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                "ListAnimateLabel",
+                StripOnInput->False],
+               {"ControlArea", Top}],
+              Alignment->{Automatic, Inherited},
+              StripOnInput->False],
+             Background->None,
+             StripOnInput->False]},
+           {
+            ItemBox[
+             TagBox[
+              StyleBox[
+               PaneBox[
+                TagBox[
+                 PaneSelectorBox[{1->
+                  
+                  GraphicsBox[{ArrowBox[{{0, 44}, {14, 60}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 2->
+                  
+                  GraphicsBox[{ArrowBox[{{-1, 43}, {15, 59}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 3->
+                  
+                  GraphicsBox[{ArrowBox[{{-2, 44}, {16, 58}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 4->
+                  
+                  GraphicsBox[{ArrowBox[{{-3, 43}, {17, 59}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 5->
+                  
+                  GraphicsBox[{ArrowBox[{{-2, 42}, {18, 59}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 6->
+                  
+                  GraphicsBox[{ArrowBox[{{-3, 41}, {19, 60}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 7->
+                  
+                  GraphicsBox[{ArrowBox[{{-2, 42}, {20, 59}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 8->
+                  
+                  GraphicsBox[{ArrowBox[{{-3, 41}, {21, 58}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 9->
+                  
+                  GraphicsBox[{ArrowBox[{{-3, 42}, {21, 59}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 10->
+                  
+                  GraphicsBox[{ArrowBox[{{-3, 41}, {22, 59}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 11->
+                  
+                  GraphicsBox[{ArrowBox[{{-4, 41}, {22, 59}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 12->
+                  
+                  GraphicsBox[{ArrowBox[{{-4, 40}, {21, 58}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 13->
+                  
+                  GraphicsBox[{ArrowBox[{{-4, 41}, {22, 59}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 14->
+                  
+                  GraphicsBox[{ArrowBox[{{-5, 42}, {23, 58}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 15->
+                  
+                  GraphicsBox[{ArrowBox[{{-4, 43}, {22, 59}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 16->
+                  
+                  GraphicsBox[{ArrowBox[{{-3, 44}, {23, 58}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 17->
+                  
+                  GraphicsBox[{ArrowBox[{{-4, 43}, {24, 57}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 18->
+                  
+                  GraphicsBox[{ArrowBox[{{-5, 42}, {23, 57}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 19->
+                  
+                  GraphicsBox[{ArrowBox[{{-6, 41}, {24, 56}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 20->
+                  
+                  GraphicsBox[{ArrowBox[{{-7, 42}, {23, 55}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 21->
+                  
+                  GraphicsBox[{ArrowBox[{{-8, 43}, {24, 54}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 22->
+                  
+                  GraphicsBox[{ArrowBox[{{-9, 44}, {25, 53}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 23->
+                  
+                  GraphicsBox[{ArrowBox[{{-8, 45}, {26, 52}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 24->
+                  
+                  GraphicsBox[{ArrowBox[{{-7, 45}, {26, 51}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 25->
+                  
+                  GraphicsBox[{ArrowBox[{{-8, 45}, {26, 50}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 26->
+                  
+                  GraphicsBox[{ArrowBox[{{-9, 46}, {26, 50}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 27->
+                  
+                  GraphicsBox[{ArrowBox[{{-9, 47}, {27, 50}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 28->
+                  
+                  GraphicsBox[{ArrowBox[{{-8, 48}, {27, 49}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 29->
+                  
+                  GraphicsBox[{ArrowBox[{{-8, 49}, {28, 48}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 30->
+                  
+                  GraphicsBox[{ArrowBox[{{-7, 48}, {28, 47}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 31->
+                  
+                  GraphicsBox[{ArrowBox[{{-7, 48}, {28, 48}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 32->
+                  
+                  GraphicsBox[{ArrowBox[{{-7, 48}, {28, 49}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 33->
+                  
+                  GraphicsBox[{ArrowBox[{{-6, 49}, {29, 50}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 34->
+                  
+                  GraphicsBox[{ArrowBox[{{-6, 48}, {30, 49}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 35->
+                  
+                  GraphicsBox[{ArrowBox[{{-5, 49}, {31, 50}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 36->
+                  
+                  GraphicsBox[{ArrowBox[{{-4, 49}, {30, 50}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 37->
+                  
+                  GraphicsBox[{ArrowBox[{{-4, 49}, {31, 50}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 38->
+                  
+                  GraphicsBox[{ArrowBox[{{-4, 49}, {32, 50}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 39->
+                  
+                  GraphicsBox[{ArrowBox[{{-5, 50}, {32, 49}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True], 40->
+                  
+                  GraphicsBox[{ArrowBox[{{-5, 49}, {32, 50}}], 
+                    LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7,
+                     72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
+                   Frame->True]}, Dynamic[$CellContext`i12$$],
+                  Alignment->Automatic,
+                  BaseStyle->"ListAnimateCore",
+                  ImageSize->All,
+                  TransitionDirection->Horizontal,
+                  TransitionDuration->0.5,
+                  TransitionEffect->Automatic],
+                 Identity,
+                 Editable->True,
+                 Selectable->True],
+                ImageMargins->10],
+               Deployed->False,
+               StripOnInput->False,
+               ScriptLevel->0,
+               GraphicsBoxOptions->{PreserveImageOptions->True},
+               Graphics3DBoxOptions->{PreserveImageOptions->True}],
+              Identity,
+              Editable->False,
+              Selectable->False],
+             Alignment->{Left, Center},
+             Background->GrayLevel[1],
+             Frame->1,
+             FrameStyle->GrayLevel[0, 0.2],
+             ItemSize->Automatic,
+             StripOnInput->False]}
+          },
+          AutoDelete->False,
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Top}}, 
+            "RowsIndexed" -> {}},
+          
+          GridBoxDividers->{
+           "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{False}}, "RowsIndexed" -> {}},
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.7], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.7]}, "ColumnsIndexed" -> {}, "Rows" -> {
+              Offset[0.4], {
+               Offset[0.8]}, 
+              Offset[0.4]}, "RowsIndexed" -> {}}], If[
+          And[
+           CurrentValue["NotebookSelected"], 
+           CurrentValue["SelectionOver"]], 
+          Manipulate`Dump`ReadControllerState[
+           Map[Manipulate`Dump`updateOneVar[#, 
+             CurrentValue["PreviousFormatTime"], 
+             CurrentValue["CurrentFormatTime"]]& , {
+             
+             Manipulate`Dump`controllerLink[{$CellContext`i12$$, \
+$CellContext`i12$6922$$}, "X1", 
+              If["DefaultAbsolute", True, "JB1"], False, {1, 40, 1}, 40, 
+              1.]}], 
+           
+           CurrentValue[{
+            "ControllerData", {
+             "Gamepad", "Joystick", "Multi-Axis Controller"}}], {}]],
+         ImageSizeCache->{393., {215.75, 220.75}}],
+        DefaultBaseStyle->{},
+        FrameMargins->{{5, 5}, {5, 5}}],
+       BaselinePosition->Automatic,
+       ImageMargins->0],
+      Deinitialization:>None,
+      DynamicModuleValues:>{},
+      SynchronousInitialization->True,
+      UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+      UnsavedVariables:>{Typeset`initDone$$},
+      UntrackedVariables:>{Typeset`size$$}], "ListAnimate",
+     Deployed->True,
+     StripOnInput->False],
+    Manipulate`InterpretManipulate[1]]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.736358878517331*^9},ExpressionUUID->"582b1cae-c610-4ff3-959e-\
+0f3510985806"]
+}, Open  ]]
 },
 WindowSize->{1340, 690},
 WindowMargins->{{1, Automatic}, {1, Automatic}},
@@ -434,16 +1429,35 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 2436, 72, 101, "Input",ExpressionUUID->"2b114400-9e03-4d29-93ac-5c263c362bee"],
-Cell[3019, 96, 530, 10, 397, "Output",ExpressionUUID->"9527d370-5449-4097-a90f-208c5f15500a"]
+Cell[3019, 96, 628, 12, 397, "Output",ExpressionUUID->"6db09ea8-5d8f-4931-acd9-2b7a4710ac27"]
 }, Open  ]],
-Cell[3564, 109, 433, 10, 31, "Input",ExpressionUUID->"637495ed-83d9-4947-b2a3-872b51358d80"],
-Cell[4000, 121, 437, 11, 31, "Input",ExpressionUUID->"20829ec0-cf2a-49b7-a334-27a41bb1d9b4"],
-Cell[4440, 134, 1667, 42, 170, "Input",ExpressionUUID->"84932f6f-96bf-416a-92eb-fb8309a37f53"],
+Cell[3662, 111, 504, 11, 31, "Input",ExpressionUUID->"637495ed-83d9-4947-b2a3-872b51358d80"],
+Cell[4169, 124, 589, 13, 31, "Input",ExpressionUUID->"20829ec0-cf2a-49b7-a334-27a41bb1d9b4"],
+Cell[4761, 139, 1719, 43, 170, "Input",ExpressionUUID->"84932f6f-96bf-416a-92eb-fb8309a37f53"],
 Cell[CellGroupData[{
-Cell[6132, 180, 190, 4, 31, "Input",ExpressionUUID->"d3bda179-5628-4491-843d-14969f1d32fc"],
-Cell[6325, 186, 9908, 224, 503, "Output",ExpressionUUID->"0dc14cf6-889a-4f46-84b3-cb2dc6216973"]
+Cell[6505, 186, 190, 4, 31, "Input",ExpressionUUID->"d3bda179-5628-4491-843d-14969f1d32fc"],
+Cell[6698, 192, 7762, 182, 470, "Output",ExpressionUUID->"39804c75-d397-4790-9c39-84934ad5cee6"]
 }, Open  ]],
-Cell[16248, 413, 158, 3, 31, "Input",ExpressionUUID->"509038da-adee-4048-b758-abadb0385326"]
+Cell[14475, 377, 329, 10, 8, "Text",ExpressionUUID->"cddf4688-b311-4a1d-bea3-eda74c597e01"],
+Cell[14807, 389, 555, 12, 31, "Input",ExpressionUUID->"9ec37b7a-c632-4d39-98b5-a76a27311567"],
+Cell[15365, 403, 536, 12, 31, "Input",ExpressionUUID->"83b85aa9-4e29-442e-8942-b937b7dd449b"],
+Cell[15904, 417, 1667, 42, 170, "Input",ExpressionUUID->"b87004fa-ecdc-4329-affc-865052d3251b"],
+Cell[CellGroupData[{
+Cell[17596, 463, 190, 4, 31, "Input",ExpressionUUID->"56b6295e-4c38-4dce-bbf2-7e81269fd7a1"],
+Cell[17789, 469, 7495, 178, 539, "Output",ExpressionUUID->"e666feb3-e508-47aa-89c9-9e2b80dd0a11"]
+}, Open  ]],
+Cell[25299, 650, 329, 10, 8, "Text",ExpressionUUID->"36539e2d-1ca9-4baa-ae15-38c58c65b3f8"],
+Cell[25631, 662, 601, 12, 31, "Input",ExpressionUUID->"e1aa8486-ac20-43b3-a5c6-5cb51b9582c2"],
+Cell[26235, 676, 585, 13, 31, "Input",ExpressionUUID->"8a3fe6a5-e8d1-4a50-9998-cc6d9d7ca6c9"],
+Cell[26823, 691, 1667, 42, 170, "Input",ExpressionUUID->"b5feac9e-ad54-446a-8586-f7d1748e5c21"],
+Cell[CellGroupData[{
+Cell[28515, 737, 190, 4, 31, "Input",ExpressionUUID->"bf0c2d50-f35f-46c6-b8b5-c75f1fe84b52"],
+Cell[28708, 743, 14953, 323, 470, "Output",ExpressionUUID->"5a19eff0-b50b-49e7-8a56-01cc44b12985"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43698, 1071, 232, 5, 31, "Input",ExpressionUUID->"a7efda95-2465-4381-be90-24e2342773f2"],
+Cell[43933, 1078, 15671, 332, 470, "Output",ExpressionUUID->"582b1cae-c610-4ff3-959e-0f3510985806"]
+}, Open  ]]
 }
 ]
 *)

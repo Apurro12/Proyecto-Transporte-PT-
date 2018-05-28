@@ -10,8 +10,8 @@ from random import randint as RI
 import time
 
 a= 4
-bach = 10
-iteracion = 20
+bach = 100000
+iteracion = 10
 
 def d(p1,p2,q):
     t=np.dot((p2-p1),(q-p1))/(LA.norm(p2-p1)**2)
@@ -121,7 +121,7 @@ def tot2(grafo): # Este total calcula el tiempo total sobre todos los limites en
 
 def tot(grafo): # Este total tira numeros random para hacer lo mismo que el de arriba
     total = 0
-    for j in range(0,10): #El limite se puede aumentar para tener mas precision
+    for j in range(0,bach): #El limite se puede aumentar para tener mas precision
         x1 = RI(-7,31)
         x2 = RI(-7,31)
         y1 = RI(32,72)
@@ -193,11 +193,16 @@ gragrafofo = np.array([grafo2,grafo])
 
 """ESto Abajo Esta Escrito para poner Animarlo con el Mathematica"""
 
-grafo = np.array([[-1,44],[14,59]])
+
+grafo = np.array([[11,35],[12,70]])
 print("Empezo")
 print()
-Datos = open("Prueba1","w")
+Datos = open("Prueba2","w")
+Datos.write("Aca la configuracion inicial es [[11,35],[12,70]], tiene un bach de 100000 y le aplique 10 iteraciones")
+Datos.write("\n")
 
+Datos.write( str(grafo[0][0]) + "," + str(grafo[0][1])  + ","  + str(grafo[1][0]) + "," + str(grafo[1][1]) )
+Datos.write("\n")
 for j in range(0,iteracion):
     grafo = optimizador(grafo)
     Datos.write( str(grafo[0][0]) + "," + str(grafo[0][1])  + ","  + str(grafo[1][0]) + "," + str(grafo[1][1])   )
@@ -209,4 +214,7 @@ for j in range(0,iteracion):
 
 
 print("termino")
+
+
+
 
