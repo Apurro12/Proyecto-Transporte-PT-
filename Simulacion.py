@@ -9,9 +9,13 @@ from numpy import linalg as LA
 from random import randint as RI
 import time
 
+
 a= 4
-bach = 100000
+bach = 10000
 iteracion = 10
+
+LR = np.genfromtxt("LR",delimiter=",")
+
 
 def d(p1,p2,q):
     t=np.dot((p2-p1),(q-p1))/(LA.norm(p2-p1)**2)
@@ -109,12 +113,22 @@ def selector(p1,p2,gragrafofo):
     b = Tiempos.index(tmin) #Este te devuelve el primer minimo que encuentra 
     return(b,tmin) #Retorna el num de grafo que se toma y el tiempo que tarda cuando viaja optimo
 
+
+
+def tot0(grafo,q): # List Random tiene que ser una lista de numeros random, de 4*bach numeros random
+    total = 0
+    for j in range(0,bach): #El limite se puede aumentar para tener mas precision
+        taux = toptimo(np.array([q[j][0],q[j][1]]),np.array([q[j][2],q[j][3]]),grafo)
+        total = total + taux
+    return (total)
+
+
 def tot2(grafo): # Este total calcula el tiempo total sobre todos los limites en las esquinas
     total = 0
     for x1 in range(-7,32):
         for y1 in range(32,73):
-            for y2 in range(y1,73):
-                for x2 in range(y1,32):
+            for y2 in range(32,73):
+                for x2 in range(-7,32):
                     taux = toptimo(np.array([x1,y1]),np.array([x2,y2]),grafo)
                     total = total + taux
     return (total)
@@ -149,8 +163,8 @@ def optimizador(grafo):
     print()
     for i in range(0,9):
         for j in range(0,9):
-            grafos.append(np.array([grafo[0]+versores[j],grafo[1]+versores[i]]))
-            lista.append(tot( np.array([grafo[0]+versores[j],grafo[1]+versores[i]]) ) )
+            grafos.append(np.array( [grafo[0]+versores[j],grafo[1]+versores[i]] ) )
+            lista.append( tot ( np.array([grafo[0]+versores[j],grafo[1]+versores[i]]) ) )
 #            print(G[i+j])    
 #    print(lista)
     tn = min(lista)
@@ -173,7 +187,21 @@ def optimizador2(gragrafofo):
             
     return(gragrafofo)
 
-
+def optimizador0(grafo,q):
+    grafos = []
+    lista = []
+#    print("El grafo original es", grafo)
+    print()
+    for i in range(0,9):
+        for j in range(0,9):
+            grafos.append(np.array([grafo[0]+versores[j],grafo[1]+versores[i]]))
+            lista.append( tot0 ( np.array([grafo[0]+versores[j],grafo[1]+versores[i]]) , q ) )
+#            print(G[i+j])    
+#    print(lista)
+    tn = min(lista)
+    indice = lista.index(tn)
+#    print(indice)
+    return(grafos[indice])
 
 # In[16]:
 
@@ -191,10 +219,9 @@ gragrafofo = np.array([grafo2,grafo])
 
 # In[41]:
 
-"""ESto Abajo Esta Escrito para poner Animarlo con el Mathematica"""
+"""ESto Abajo Esta Escrito para poner Animarlo con el Mathematica (Tarda mucho, voy a cambiarle la funcion tot)"""
 
-
-grafo = np.array([[11,35],[12,70]])
+"""grafo = np.array([[11,35],[12,70]])
 print("Empezo")
 print()
 Datos = open("Prueba2","w")
@@ -213,8 +240,29 @@ for j in range(0,iteracion):
     print("pasada" ,j+1,"De", iteracion )
 
 
+print("termino")"""
+
+
+"""Esta es la segunda version del optimizador donde tiro los numeros random una sola vez"""
+
+grafo = np.array([[11,35],[12,70]])
+print("Empezo")
+print()
+Datos = open("Prueba2","w")
+Datos.write("Aca la configuracion inicial es [[11,35],[12,70]], tiene un bach de 100000 y le aplique 10 iteraciones")
+Datos.write("\n")
+
+Datos.write( str(grafo[0][0]) + "," + str(grafo[0][1])  + ","  + str(grafo[1][0]) + "," + str(grafo[1][1]) )
+Datos.write("\n")
+for j in range(0,iteracion):
+    grafo = optimizador0(grafo,LR)
+    Datos.write( str(grafo[0][0]) + "," + str(grafo[0][1])  + ","  + str(grafo[1][0]) + "," + str(grafo[1][1])   )
+    if (j != iteracion - 1):
+        Datos.write( str("\n") )
+
+    print(time.clock())
+    print("pasada" ,j+1,"De", iteracion )
+
+
 print("termino")
-
-
-
 
