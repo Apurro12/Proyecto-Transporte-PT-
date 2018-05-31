@@ -39,29 +39,29 @@ grafo1=np.array([[18,44],[7,60]])
 
 print("Empezo")
 print()
-Datos = open("Prueba2","w")
+Datos = open("Prueba4","w")
 Datos.write("Aca la configuracion inicial es [[[7,44],[18,60]],[[18,44],[7,60]]], tiene un bach de 1000 y le aplique 10 iteraciones")
 Datos.write("\n")
 
 Datos.write( str(gragrafofo[0][0][0]) + "," + str(gragrafofo[0][0][1])  + ","  + 
-str(gragrafofo[0][1][0]) + "," + str(gragrafogo[0][1][1]) )
+str(gragrafofo[0][1][0]) + "," + str(gragrafofo[0][1][1]) )
 
 Datos.write("\n")
 
 Datos.write( str(gragrafofo[1][0][0]) + "," + str(gragrafofo[1][0][1])  + ","  + 
-str(gragrafofo[1][1][0]) + "," + str(gragrafogo[1][1][1]) )
+str(gragrafofo[1][1][0]) + "," + str(gragrafofo[1][1][1]) )
 Datos.write("\n")
 
 for j in range(0,iteracion):
     grafo = optimizador20(gragrafofo,LR)
 
     Datos.write( str(gragrafofo[0][0][0]) + "," + str(gragrafofo[0][0][1])  + ","  + 
-    str(gragrafofo[0][1][0]) + "," + str(gragrafogo[0][1][1]) )
+    str(gragrafofo[0][1][0]) + "," + str(gragrafofo[0][1][1]) )
 
     Datos.write("\n")
 
     Datos.write( str(gragrafofo[1][0][0]) + "," + str(gragrafofo[1][0][1])  + ","  + 
-    str(gragrafofo[1][1][0]) + "," + str(gragrafogo[1][1][1]) )
+    str(gragrafofo[1][1][0]) + "," + str(gragrafofo[1][1][1]) )
     Datos.write("\n")
 
     if (j != iteracion - 1):
