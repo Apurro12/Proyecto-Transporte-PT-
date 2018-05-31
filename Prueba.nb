@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     49621,       1213]
-NotebookOptionsPosition[     47633,       1174]
-NotebookOutlinePosition[     47971,       1189]
-CellTagsIndexPosition[     47928,       1186]
+NotebookDataLength[     49623,       1213]
+NotebookOptionsPosition[     47635,       1174]
+NotebookOutlinePosition[     47973,       1189]
+CellTagsIndexPosition[     47930,       1186]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -222,7 +222,7 @@ Cell[BoxData[
                 {"\<\"\"\>", 
                  AnimatorBox[Dynamic[$CellContext`i14$$], {1, 9, 1},
                   AnimationRate->Automatic,
-                  AnimationRunTime->3.1291842460632324`,
+                  AnimationRunTime->0.,
                   AnimationRunning->False,
                   AnimationTimeIndex->3.1291842460632324`,
                   
@@ -254,6 +254,7 @@ Cell[BoxData[
              PaneBox[
               TagBox[
                PaneSelectorBox[{1->
+                
                 GraphicsBox[{ArrowBox[{{11, 35}, {12, 70}}], 
                   LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
                    72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
@@ -710,7 +711,7 @@ f7d1748e5c21"],
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`i11$$ = 1, Typeset`show$$ = True, 
+   DynamicModuleBox[{$CellContext`i11$$ = 6, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {
     "\"min\"" :> {$CellContext`i11$$ = 1}, 
      "\"max\"" :> {$CellContext`i11$$ = 19}}, Typeset`bookmarkMode$$ = "Menu",
@@ -730,9 +731,9 @@ Cell[BoxData[
                 {"\<\"\"\>", 
                  AnimatorBox[Dynamic[$CellContext`i11$$], {1, 19, 1},
                   AnimationRate->Automatic,
-                  AnimationRunTime->4.847773551940918,
+                  AnimationRunTime->1.5313215255737305`,
                   AnimationRunning->False,
-                  AnimationTimeIndex->0.,
+                  AnimationTimeIndex->1.5313215255737305`,
                   
                   AppearanceElements->{
                    "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons",
@@ -762,7 +763,6 @@ Cell[BoxData[
              PaneBox[
               TagBox[
                PaneSelectorBox[{1->
-                
                 GraphicsBox[{ArrowBox[{{7, 44}, {19, 60}}], 
                   LineBox[{{{-7, 32}, {31, 32}}, {{-7, 32}, {-7, 72}}, {{-7, 
                    72}, {31, 72}}, {{31, 72}, {31, 32}}}]},
@@ -1197,23 +1197,23 @@ Cell[4068, 124, 504, 11, 31, "Input",ExpressionUUID->"637495ed-83d9-4947-b2a3-87
 Cell[4575, 137, 589, 13, 31, "Input",ExpressionUUID->"20829ec0-cf2a-49b7-a334-27a41bb1d9b4"],
 Cell[CellGroupData[{
 Cell[5189, 154, 1836, 45, 193, "Input",ExpressionUUID->"84932f6f-96bf-416a-92eb-fb8309a37f53"],
-Cell[7028, 201, 7108, 169, 506, "Output",ExpressionUUID->"7c989226-a114-4792-a26d-4a8990f90087"]
+Cell[7028, 201, 7108, 170, 506, "Output",ExpressionUUID->"7c989226-a114-4792-a26d-4a8990f90087"]
 }, Open  ]],
-Cell[14151, 373, 329, 10, 8, "Text",ExpressionUUID->"cddf4688-b311-4a1d-bea3-eda74c597e01"],
+Cell[14151, 374, 329, 10, 8, "Text",ExpressionUUID->"cddf4688-b311-4a1d-bea3-eda74c597e01"],
 Cell[CellGroupData[{
-Cell[14505, 387, 2305, 57, 239, "Input",ExpressionUUID->"9ec37b7a-c632-4d39-98b5-a76a27311567"],
-Cell[16813, 446, 7131, 170, 506, "Output",ExpressionUUID->"07a70cbc-7913-4a09-a602-068aacf3bea9"]
+Cell[14505, 388, 2305, 57, 239, "Input",ExpressionUUID->"9ec37b7a-c632-4d39-98b5-a76a27311567"],
+Cell[16813, 447, 7131, 170, 506, "Output",ExpressionUUID->"07a70cbc-7913-4a09-a602-068aacf3bea9"]
 }, Open  ]],
-Cell[23959, 619, 329, 10, 8, "Text",ExpressionUUID->"36539e2d-1ca9-4baa-ae15-38c58c65b3f8"],
-Cell[24291, 631, 601, 12, 31, "Input",ExpressionUUID->"e1aa8486-ac20-43b3-a5c6-5cb51b9582c2"],
-Cell[24895, 645, 631, 13, 31, "Input",ExpressionUUID->"8a3fe6a5-e8d1-4a50-9998-cc6d9d7ca6c9"],
+Cell[23959, 620, 329, 10, 8, "Text",ExpressionUUID->"36539e2d-1ca9-4baa-ae15-38c58c65b3f8"],
+Cell[24291, 632, 601, 12, 31, "Input",ExpressionUUID->"e1aa8486-ac20-43b3-a5c6-5cb51b9582c2"],
+Cell[24895, 646, 631, 13, 31, "Input",ExpressionUUID->"8a3fe6a5-e8d1-4a50-9998-cc6d9d7ca6c9"],
 Cell[CellGroupData[{
-Cell[25551, 662, 1835, 45, 193, "Input",ExpressionUUID->"b5feac9e-ad54-446a-8586-f7d1748e5c21"],
-Cell[27389, 709, 9701, 222, 506, "Output",ExpressionUUID->"65fcc55e-55e5-487b-8202-9c3cc99eb960"]
+Cell[25551, 663, 1835, 45, 193, "Input",ExpressionUUID->"b5feac9e-ad54-446a-8586-f7d1748e5c21"],
+Cell[27389, 710, 9703, 221, 506, "Output",ExpressionUUID->"65fcc55e-55e5-487b-8202-9c3cc99eb960"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[37127, 936, 10287, 229, 502, "Input",ExpressionUUID->"de10b7c7-33f2-4418-b700-e1cfcca88851"],
-Cell[47417, 1167, 200, 4, 35, "Output",ExpressionUUID->"935bc1e0-4a9e-46c3-987a-34d23affc420"]
+Cell[37129, 936, 10287, 229, 502, "Input",ExpressionUUID->"de10b7c7-33f2-4418-b700-e1cfcca88851"],
+Cell[47419, 1167, 200, 4, 35, "Output",ExpressionUUID->"935bc1e0-4a9e-46c3-987a-34d23affc420"]
 }, Open  ]]
 }
 ]

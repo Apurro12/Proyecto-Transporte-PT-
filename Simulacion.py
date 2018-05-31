@@ -165,27 +165,11 @@ def optimizador(grafo):
         for j in range(0,9):
             grafos.append(np.array( [grafo[0]+versores[j],grafo[1]+versores[i]] ) )
             lista.append( tot ( np.array([grafo[0]+versores[j],grafo[1]+versores[i]]) ) )
-#            print(G[i+j])    
 #    print(lista)
     tn = min(lista)
     indice = lista.index(tn)
 #    print(indice)
     return(grafos[indice])
-    
-def optimizador2(gragrafofo):
-    listorta= []
-    tiempos = []
-    for j in range(0,len(gragrafofo)):
-        listorta.append (  optimizador ( gragrafofo[j] ) )
-        tiempos. append ( tot( optimizador ( gragrafofo[j] ) ) )
-    tn = min(tiempos)
-    indice = tiempos.index(tn)
-    
-    for j in range(0,len(gragrafofo)):
-        if (j == indice):
-            gragrafofo[j] = listorta[j]
-            
-    return(gragrafofo)
 
 def optimizador0(grafo,q):
     grafos = []
@@ -202,6 +186,23 @@ def optimizador0(grafo,q):
     indice = lista.index(tn)
 #    print(indice)
     return(grafos[indice])
+    
+def optimizador2(gragrafofo):
+    listorta= []
+    tiempos = []
+    for j in range(0,len(gragrafofo)):
+        listorta.append (  optimizador ( gragrafofo[j] ) )
+        tiempos.append ( tot( optimizador ( gragrafofo[j] ) ) )
+    tn = min(tiempos)
+    indice = tiempos.index(tn)
+    
+    for j in range(0,len(gragrafofo)):
+        if (j == indice):
+            gragrafofo[j] = listorta[j]
+            
+    return(gragrafofo)
+
+
 
 # In[16]:
 
