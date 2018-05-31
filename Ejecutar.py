@@ -20,7 +20,7 @@ Datos.write("\n")
 Datos.write( str(grafo[0][0]) + "," + str(grafo[0][1])  + ","  + str(grafo[1][0]) + "," + str(grafo[1][1]) )
 Datos.write("\n")
 for j in range(0,iteracion):
-    grafo = optimizador0(grafo,LR)
+    grafo = optimizador0(grafo,LR)[0]
     Datos.write( str(grafo[0][0]) + "," + str(grafo[0][1])  + ","  + str(grafo[1][0]) + "," + str(grafo[1][1])   )
     if (j != iteracion - 1):
         Datos.write( str("\n") )

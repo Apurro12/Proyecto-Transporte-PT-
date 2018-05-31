@@ -185,7 +185,7 @@ def optimizador0(grafo,q):
     tn = min(lista)
     indice = lista.index(tn)
 #    print(indice)
-    return(grafos[indice])
+    return([grafos[indice],tn])
     
 def optimizador2(gragrafofo):
     listorta= []
@@ -206,8 +206,8 @@ def optimizador20(gragrafofo,q):
     listorta= []
     tiempos = []
     for j in range(0,len(gragrafofo)):
-        listorta.append (  optimizador0 ( gragrafofo[j],q ) )
-        tiempos.append ( tot0( optimizador0( gragrafofo[j],q),q ) )
+        listorta.append (  optimizador0 ( gragrafofo[j],q )[0] )
+        tiempos.append (  optimizador0(gragrafofo[j],q)[1] )
 
     tn = min(tiempos)
     indice = tiempos.index(tn)
