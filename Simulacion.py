@@ -102,11 +102,11 @@ def toptimo(p1,p2,grafo):
 #Esta cosa me devuelve el tiempo minimo que tarda entre dos puntos 
 
 
-def selector(p1,p2,gragrafofo):
+def selector(p1,p2,gragrafofox):
     Tiempos = []
     D=[]
-    for i in range(0,len(gragrafofo)):
-        D =  toptimo(p1,p2,gragrafofo[i])
+    for i in range(0,len(gragrafofox)):
+        D =  toptimo(p1,p2,gragrafofox[i])
         Tiempos.append(D)
 
     tmin = min(Tiempos)
@@ -161,8 +161,8 @@ def optimizador(grafo):
     lista = []
 #    print("El grafo original es", grafo)
     print()
-    for i in range(0,9):
-        for j in range(0,9):
+    for i in range(0,10):
+        for j in range(0,10):
             grafos.append(np.array( [grafo[0]+versores[j],grafo[1]+versores[i]] ) )
             lista.append( tot ( np.array([grafo[0]+versores[j],grafo[1]+versores[i]]) ) )
 #    print(lista)
@@ -176,8 +176,8 @@ def optimizador0(grafo,q):
     lista = []
 #    print("El grafo original es", grafo)
     print()
-    for i in range(0,9):
-        for j in range(0,9):
+    for i in range(0,10):
+        for j in range(0,10):
             grafos.append(np.array([grafo[0]+versores[j],grafo[1]+versores[i]]))
             lista.append( tot0 ( np.array([grafo[0]+versores[j],grafo[1]+versores[i]]) , q ) )
 #            print(G[i+j])    
@@ -202,21 +202,21 @@ def optimizador2(gragrafofo):
             
     return(gragrafofo)
 
-def optimizador20(gragrafofo,q):
+def optimizador20(gragrafofox,q):
     listorta= []
     tiempos = []
-    for j in range(0,len(gragrafofo)):
-        listorta.append (  optimizador0 ( gragrafofo[j],q )[0] )
-        tiempos.append (  optimizador0(gragrafofo[j],q)[1] )
+    for j in range(0,len(gragrafofox)):
+        listorta.append (  optimizador0 ( gragrafofox[j],q )[0] )
+        tiempos.append (  optimizador0(gragrafofox[j],q)[1] )
 
     tn = min(tiempos)
     indice = tiempos.index(tn)
     
-    for j in range(0,len(gragrafofo)):
+    for j in range(0,len(gragrafofox)):
         if (j == indice):
-            gragrafofo[j] = listorta[j]
+            gragrafofox[j] = listorta[j]
             
-    return(gragrafofo)
+    return(gragrafofox)
 
 # In[16]:
 
