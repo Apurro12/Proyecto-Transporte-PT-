@@ -11,7 +11,7 @@ import time
 
 
 a= 4
-bach = 10000
+bach = 1000
 iteracion = 10
 
 LR = np.genfromtxt("LR",delimiter=",")
@@ -202,11 +202,11 @@ def optimizador2(gragrafofo):
             
     return(gragrafofo)
 
-def optimizador20(gragrafofo):
+def optimizador20(gragrafofo,q):
     listorta= []
     tiempos = []
     for j in range(0,len(gragrafofo)):
-        listorta.append (  optimizador ( gragrafofo[j] ) )
+        listorta.append (  optimizador0 ( gragrafofo[j],q ) )
         tiempos.append ( tot0( optimizador0( gragrafofo[j],q),q ) )
 
     tn = min(tiempos)
@@ -221,15 +221,7 @@ def optimizador20(gragrafofo):
 # In[16]:
 
 
-p1=np.array([-1,44])
-p2=np.array([-1,45])
-q = np.array([2,50])
-grafo=np.array([[7,60],[7,44]])
-grafo1=np.array([[-1,44],[14,60]])
-grafo2=np.array([[-1,44],[15,61]])
-grafo4=np.array([[-1,44],[14,59]])
-gragrafofo = np.array([grafo2,grafo])
-# gragrafofo es un vector de grafos
+
 
 
 # In[41]:
@@ -258,26 +250,5 @@ for j in range(0,iteracion):
 print("termino")"""
 
 
-"""Esta es la segunda version del optimizador donde tiro los numeros random una sola vez"""
 
-grafo = np.array([[11,35],[12,70]])
-print("Empezo")
-print()
-Datos = open("Prueba2","w")
-Datos.write("Aca la configuracion inicial es [[11,35],[12,70]], tiene un bach de 100000 y le aplique 10 iteraciones")
-Datos.write("\n")
-
-Datos.write( str(grafo[0][0]) + "," + str(grafo[0][1])  + ","  + str(grafo[1][0]) + "," + str(grafo[1][1]) )
-Datos.write("\n")
-for j in range(0,iteracion):
-    grafo = optimizador0(grafo,LR)
-    Datos.write( str(grafo[0][0]) + "," + str(grafo[0][1])  + ","  + str(grafo[1][0]) + "," + str(grafo[1][1])   )
-    if (j != iteracion - 1):
-        Datos.write( str("\n") )
-
-    print(time.clock())
-    print("pasada" ,j+1,"De", iteracion )
-
-
-print("termino")
 
