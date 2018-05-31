@@ -161,8 +161,8 @@ def optimizador(grafo):
     lista = []
 #    print("El grafo original es", grafo)
     print()
-    for i in range(0,10):
-        for j in range(0,10):
+    for i in range(0,9):
+        for j in range(0,9):
             grafos.append(np.array( [grafo[0]+versores[j],grafo[1]+versores[i]] ) )
             lista.append( tot ( np.array([grafo[0]+versores[j],grafo[1]+versores[i]]) ) )
 #    print(lista)
@@ -176,8 +176,8 @@ def optimizador0(grafo,q):
     lista = []
 #    print("El grafo original es", grafo)
     print()
-    for i in range(0,10):
-        for j in range(0,10):
+    for i in range(0,9):
+        for j in range(0,9):
             grafos.append(np.array([grafo[0]+versores[j],grafo[1]+versores[i]]))
             lista.append( tot0 ( np.array([grafo[0]+versores[j],grafo[1]+versores[i]]) , q ) )
 #            print(G[i+j])    

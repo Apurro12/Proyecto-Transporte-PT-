@@ -1,16 +1,9 @@
 from Simulacion import *
 
-p1=np.array([-1,44])
-p2=np.array([-1,45])
-q = np.array([2,50])
-grafo=np.array([[7,44],[18,60]])
-grafo1=np.array([[18,44],[7,60]])
-gragrafofo = np.array([grafo,grafo1])
-# gragrafofo es un vector de grafos
 
 """Esta es la segunda version del optimizador donde tiro los numeros random una sola vez"""
 
-"""grafo = np.array([[11,35],[12,70]])
+grafo = np.array([[11,35],[12,70]])
 print("Empezo")
 print()
 Datos = open("Prueba2","w")
@@ -29,19 +22,20 @@ for j in range(0,iteracion):
     print("pasada" ,j+1,"De", iteracion )
 
 
-print("termino")"""
-
-"""Esta es la segunda version del optimizador de grafos donde tiro los numeros random una sola vez"""
+print("termino")
 
 
-grafo=np.array([[7,44],[18,60]])
+
+"""Esto fue un experimento para optimizar cuando tengo varios grafos, pero fue cualquier cosa, tendria que ver que es lo que hace"""
+
+"""
+grafo=np.array([[13,34],[12,70]])
 grafo1=np.array([[18,44],[7,60]])
+gragrafofo = np.array([grafo,grafo1])
 
 print("Empezo")
 print()
-Datos = open("Prueba4","w")
-Datos.write("Aca la configuracion inicial es [[[7,44],[18,60]],[[18,44],[7,60]]], tiene un bach de 1000 y le aplique 10 iteraciones")
-Datos.write("\n")
+Datos = open("Prueba5","w")
 
 Datos.write( str(gragrafofo[0][0][0]) + "," + str(gragrafofo[0][0][1])  + ","  + 
 str(gragrafofo[0][1][0]) + "," + str(gragrafofo[0][1][1]) )
@@ -50,6 +44,7 @@ Datos.write("\n")
 
 Datos.write( str(gragrafofo[1][0][0]) + "," + str(gragrafofo[1][0][1])  + ","  + 
 str(gragrafofo[1][1][0]) + "," + str(gragrafofo[1][1][1]) )
+
 Datos.write("\n")
 
 for j in range(0,iteracion):
@@ -62,14 +57,13 @@ for j in range(0,iteracion):
 
     Datos.write( str(gragrafofo[1][0][0]) + "," + str(gragrafofo[1][0][1])  + ","  + 
     str(gragrafofo[1][1][0]) + "," + str(gragrafofo[1][1][1]) )
-    Datos.write("\n")
 
-    if (j != iteracion - 1):
-        Datos.write( str("\n") )
+    Datos.write("\n")
 
     print(time.clock())
     print("pasada" ,j+1,"De", iteracion )
 
+Datos.write("Aca la configuracion inicial es [[[13,34],[12,70]],[[18,44],[7,60]]], tiene un bach de 1000 y le aplique 10 iteraciones")
 
-print("termino")
+print("termino") """
 
