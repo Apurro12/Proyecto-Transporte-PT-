@@ -202,7 +202,21 @@ def optimizador2(gragrafofo):
             
     return(gragrafofo)
 
+def optimizador20(gragrafofo):
+    listorta= []
+    tiempos = []
+    for j in range(0,len(gragrafofo)):
+        listorta.append (  optimizador ( gragrafofo[j] ) )
+        tiempos.append ( tot0( optimizador0( gragrafofo[j],q),q ) )
 
+    tn = min(tiempos)
+    indice = tiempos.index(tn)
+    
+    for j in range(0,len(gragrafofo)):
+        if (j == indice):
+            gragrafofo[j] = listorta[j]
+            
+    return(gragrafofo)
 
 # In[16]:
 
