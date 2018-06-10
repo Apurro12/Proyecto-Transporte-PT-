@@ -4,7 +4,7 @@ from Simulacion import *
 """Esta es la segunda version del optimizador donde tiro los numeros random una sola vez"""
 
 grafo = np.array([[11,35],[12,70]])
-print("Empezo")
+print("wewer")
 print()
 Datos = open("Prueba2","w")
 Datos.write("Aca la configuracion inicial es [[11,35],[12,70]], tiene un bach de 100000 y le aplique 10 iteraciones")
