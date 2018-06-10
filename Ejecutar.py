@@ -22,7 +22,7 @@ for j in range(0,iteracion):
     print("pasada" ,j+1,"De", iteracion )
 
 
-print("termino")
+print("Aca termina la simulacion")
 
 
 
